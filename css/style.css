@@ -1284,9 +1284,11 @@ body {
 /* ===== BOUTONS NAVIGATION SECTIONS ===== */
 .section-next-btn {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 8px;
+    max-width: 350px;
+    width: 100%;
     padding: 15px 30px;
     background: #8c4f46;
     color: #ffffff;
@@ -1297,6 +1299,7 @@ body {
     margin-top: 30px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(140, 79, 70, 0.3);
+    justify-content: center;
 }
 
 .section-next-btn:hover {
