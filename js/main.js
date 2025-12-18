@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Configuration RSVP
     const RSVP_CONFIG = {
-        googleScriptUrl: 'https://script.google.com/macros/s/AKfycbxUALiHh58eztVJL1hNpcrV4q79YwKPSVuQ-u7CvzxK2yc14KCf_v5sXQHCf-6zk7xScA/exec',
+        googleScriptUrl: 'https://script.google.com/macros/s/AKfycbxAQZmrSd8urninRAiv-CfOrzJgCktdfFI4gASX5_dC0Z_kRW-bViFAHkRzoxg3eaRmKA/exec',
         emailTo: 'troublea88@gmail.com'
     };
 
