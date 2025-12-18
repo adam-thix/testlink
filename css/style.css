@@ -1,0 +1,1313 @@
+/* ============================================
+   MARIAGE SHIREL & ALAN
+   Design Mobile-First (même sur desktop)
+   ============================================ */
+
+/* Polices locales */
+@font-face {
+    font-family: 'Le Jour Serif';
+    src: url('../fonts/LeJourSerif.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Amoresa';
+    src: url('../fonts/Amoresa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Variables */
+:root {
+    /* Couleurs du design */
+    --color-title: #8c4f46;
+    --color-script: #C9A86C;
+    --color-card-bg: #d69086;
+    --color-card-text: #5C3D3D;
+    --color-white: #ffffff;
+
+    /* Polices */
+    --font-title: 'Le Jour Serif', 'Times New Roman', serif;
+    --font-script: 'Amoresa', cursive;
+    --font-body: 'Georgia', serif;
+
+    /* Mobile dimensions */
+    --mobile-width: 430px;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f5f0eb;
+    overflow-x: hidden;
+}
+
+/* ===== LAYOUT MOBILE-FIRST ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: var(--mobile-width);
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Background image avec fade-in */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInBg 1.5s ease forwards;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* ===== HERO CONTENT - Centré ===== */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 20px;
+    padding-bottom: 550px;
+}
+
+/* Wrapper pour titre + subtitle + box (centré) */
+.hero-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -15vh;
+}
+
+/* ===== TITRE - SHIREL & ALAN ===== */
+.couple-names {
+    font-family: var(--font-title);
+    font-weight: 300;
+    font-size: 37px;
+    color: var(--color-title);
+    text-align: center;
+    letter-spacing: 0.12em;
+    line-height: 1;
+
+    /* Animation */
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.3s;
+}
+
+/* ===== THE WEDDING ===== */
+.wedding-subtitle {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #8c4f46;
+    margin-top: 0;
+
+    /* Animation */
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.6s;
+}
+
+/* ===== BLOC ROSE ===== */
+.info-card {
+    position: absolute;
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d6908661;
+    border-radius: 20px;
+    padding: 18px 35px;
+    width: 330px;
+    text-align: center;
+
+    /* Animation */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.9s;
+}
+
+.date-main {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 1.35rem;
+    font-weight: normal;
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-bottom: 2px;
+}
+
+.date-location {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: normal;
+    color: #8c4f46;
+}
+
+/* ===== COUNTDOWN (dans le bloc rose) ===== */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    margin-top: 15px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 45px;
+}
+
+.countdown-number {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 3px;
+    opacity: 0.9;
+}
+
+.countdown-separator {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1;
+    opacity: 0.7;
+    animation: blink 1s ease-in-out infinite;
+}
+
+/* ===== BOUTON (en dehors du bloc) ===== */
+.btn-invitation {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 15px;
+    background: #8c4f46;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 350px;
+    width: 100%;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(140, 79, 70, 0.4);
+
+    /* Animation fade in puis breathe */
+    opacity: 0;
+    animation: fadeInBtn 0.8s ease forwards 1.2s, breathe 3s ease-in-out infinite 2s;
+}
+
+.btn-invitation:hover {
+    background: #6d3d36;
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(140, 79, 70, 0.5);
+}
+
+.btn-invitation span {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.btn-invitation svg {
+    width: 14px;
+    height: 14px;
+    stroke: #ffffff;
+}
+
+/* ===== SECTION HENNÉ ===== */
+.henne-section {
+    position: relative;
+    max-width: var(--mobile-width);
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: #8e462e; */
+    justify-content: flex-start;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 55px;
+}
+
+/* Fond mosaïque */
+.henne-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8e462e;
+    background-image: url('../images/mosaic-bg.png');
+    background-repeat: repeat;
+    background-size: 580px auto;
+    z-index: 1;
+}
+
+/* Arc oriental en haut */
+.henne-arch {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin-bottom: -1px;
+}
+
+.henne-arch img {
+    width: 100%;
+    margin: auto;
+    max-width: 351px;
+    height: auto;
+    margin-top: 15px;
+    display: block;
+    z-index: 6;
+    position: relative;
+}
+
+/* Lanternes décoratives */
+.henne-lantern {
+    position: absolute;
+    z-index: 4;
+    width: 50px;
+    height: auto;
+    transform-origin: top center;
+    animation: lanternSwing 4s ease-in-out infinite, lanternGlow 3s ease-in-out infinite;
+}
+
+/* Lanternes gauche */
+.henne-lantern-l1 {
+    left: 15px;
+    top: 16%;
+    z-index: 3;
+    animation-delay: 0s;
+}
+
+.henne-lantern-l2 {
+    left: 55px;
+    top: 3%;
+    max-width: 28px;
+    animation-delay: 1.5s;
+}
+
+.henne-lantern-l3 {
+    left: 33px;
+    top: 8%;
+    max-width: 20px;
+    animation-delay: 3s;
+}
+
+/* Lanternes droite */
+.henne-lantern-r1 {
+    right: 15px;
+    top: 14%;
+    z-index: 3;
+    animation-delay: 0.8s;
+}
+
+.henne-lantern-r2 {
+    right: 50px;
+    top: 4%;
+    max-width: 25px;
+    animation-delay: 2.2s;
+}
+
+/* Carte beige centrale */
+.henne-card {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 100%);
+    border-radius: 0;
+    padding: 40px 25px 35px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding-top: 150px;
+    margin-top: -130px;
+}
+
+/* Titre HENNÉ avec mandala */
+.henne-title {
+    margin-bottom: 25px;
+}
+
+.henne-title img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+}
+
+/* Mères des mariés */
+.henne-mothers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.mother-name {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #8c4f46;
+    /* font-style: italic; */
+    font-family: var(--font-body);
+    border-bottom: 1px solid;
+}
+
+.mother-separator {
+    font-family: var(--font-script);
+    font-size: 1.3rem;
+    color: #8e462e;
+}
+
+/* Texte intro */
+.henne-intro {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #5C3D3D;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Noms du couple avec bordures */
+.henne-couple-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.couple-border {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
+
+.henne-couple {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: #c25107;
+    letter-spacing: 0.1em;
+    margin: 8px 0;
+}
+
+/* Date et heure */
+.henne-datetime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.henne-date {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #5C3D3D;
+    font-weight: 500;
+}
+
+.henne-time {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #8c4f46;
+    font-style: italic;
+}
+
+/* Lieu */
+.henne-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.henne-venue {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    color: #8c4f46;
+    letter-spacing: 0.05em;
+}
+
+.henne-venue-sub {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: #5C3D3D;
+    font-style: italic;
+}
+
+/* Bouton Waze */
+.henne-waze-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 25px;
+    background: transparent;
+    border: 1px solid #8c4f46;
+    color: #8c4f46;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.henne-waze-btn:hover {
+    background: #8c4f46;
+    color: #ffffff;
+}
+
+.henne-waze-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Footer avec chameaux et monogramme */
+.henne-footer {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.henne-footer img {
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+    border-top: 1px solid #8a442d;
+    padding-top: 25px;
+}
+
+/* ===== SECTION HOUPPA & SOIRÉE ===== */
+.houppa-section {
+    position: relative;
+    max-width: var(--mobile-width);
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 50px 15px;
+}
+
+/* Fond floral */
+.houppa-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F5EDE4;
+    background-image: url('../images/floral-bg.png');
+    background-repeat: repeat;
+    background-size: 400px auto;
+    z-index: 1;
+}
+
+/* Contenu principal avec fond beige */
+.houppa-content {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 380px;
+    text-align: center;
+    padding: 40px 30px 50px;
+    background: linear-gradient(180deg, #FAF6F1 0%, #F5EDE4 100%);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+}
+
+/* Monogramme SA */
+.houppa-monogram {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.houppa-monogram img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+
+/* Titre HOUPPA & SOIRÉE */
+.houppa-title {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    color: #8c4f46;
+    letter-spacing: 0.08em;
+    margin-bottom: 15px;
+}
+
+/* Texte hébreu (image) */
+.houppa-hebrew {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.houppa-hebrew img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Parents */
+.houppa-parents {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.parent-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.parent-name {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: #5C3D3D;
+    line-height: 1.4;
+}
+
+/* Intro */
+.houppa-intro {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: #5C3D3D;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Noms du couple */
+.houppa-couple {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.houppa-name {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: #8c4f46;
+}
+
+.houppa-amp {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: #C9A86C;
+}
+
+/* Noms hébreux */
+.houppa-hebrew-names {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-bottom: 15px;
+}
+
+.houppa-hebrew-names span {
+    font-size: 0.8rem;
+    color: #8c4f46;
+}
+
+/* Texte cérémonie */
+.houppa-ceremony-text {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: #5C3D3D;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Date */
+.houppa-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.houppa-date-main {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    color: #8c4f46;
+}
+
+.houppa-date-hebrew {
+    font-size: 0.8rem;
+    color: #8c4f46;
+    margin: 3px 0;
+}
+
+.houppa-time {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #c25107;
+    font-style: italic;
+}
+
+/* Lieu */
+.houppa-venue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.venue-name {
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+    color: #8c4f46;
+    letter-spacing: 0.05em;
+}
+
+.venue-address {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: #5C3D3D;
+}
+
+/* Bouton Waze */
+.houppa-waze-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid #8c4f46;
+    color: #8c4f46;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.houppa-waze-btn:hover {
+    background: #8c4f46;
+    color: #ffffff;
+}
+
+/* Image hôtel */
+.houppa-hotel-image {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.houppa-hotel-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Texte cocktail */
+.houppa-cocktail {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #5C3D3D;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Dédicace */
+.houppa-dedication {
+    border-top: 1px solid #d4c4b5;
+    padding-top: 20px;
+}
+
+.houppa-dedication p {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: #8c4f46;
+    line-height: 1.4;
+    margin-bottom: 3px;
+}
+
+.dedication-names {
+    font-style: italic;
+    color: #5C3D3D !important;
+}
+
+.dedication-closing {
+    margin-top: 10px !important;
+    font-style: italic;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+}
+
+@keyframes fadeInBtn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 4px 15px rgba(140, 79, 70, 0.4);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.03);
+        box-shadow: 0 6px 25px rgba(140, 79, 70, 0.6);
+    }
+}
+
+/* Animation balancement lanternes */
+@keyframes lanternSwing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+}
+
+/* Animation lueur lanternes */
+@keyframes lanternGlow {
+    0%, 100% {
+        filter: brightness(1) drop-shadow(0 0 5px rgba(255, 180, 100, 0.3));
+    }
+    50% {
+        filter: brightness(1.1) drop-shadow(0 0 12px rgba(255, 180, 100, 0.6));
+    }
+}
+
+/* ===== SECTION RSVP ===== */
+.rsvp-section {
+    position: relative;
+    max-width: var(--mobile-width);
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 50px 20px;
+}
+
+.rsvp-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
+    z-index: 1;
+}
+
+.rsvp-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 380px;
+}
+
+.rsvp-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: #8c4f46;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.rsvp-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #5C3D3D;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Formulaire */
+.rsvp-form {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #5C3D3D;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d4c4b5;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #5C3D3D;
+    background: #faf8f6;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8c4f46;
+    box-shadow: 0 0 0 3px rgba(140, 79, 70, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Radio buttons personnalisés */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 15px;
+    border: 1px solid #d4c4b5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+    border-color: #8c4f46;
+    background: #faf8f6;
+}
+
+.radio-option input {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d4c4b5;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-option input:checked + .radio-custom {
+    border-color: #8c4f46;
+}
+
+.radio-option input:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #8c4f46;
+    border-radius: 50%;
+}
+
+.radio-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #5C3D3D;
+}
+
+/* Checkbox personnalisés */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 15px;
+    border: 1px solid #d4c4b5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option:hover {
+    border-color: #8c4f46;
+    background: #faf8f6;
+}
+
+.checkbox-option input {
+    display: none;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d4c4b5;
+    border-radius: 4px;
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option input:checked + .checkbox-custom {
+    border-color: #8c4f46;
+    background: #8c4f46;
+}
+
+.checkbox-option input:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #5C3D3D;
+}
+
+/* Sélecteur nombre d'invités */
+.guests-group {
+    display: none;
+}
+
+.guests-group.visible {
+    display: block;
+}
+
+.guests-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.guests-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d4c4b5;
+    background: #faf8f6;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #8c4f46;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.guests-btn:hover {
+    background: #8c4f46;
+    color: #fff;
+    border-color: #8c4f46;
+}
+
+.guests-selector input {
+    width: 60px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: #5C3D3D;
+    border: 1px solid #d4c4b5;
+    border-radius: 8px;
+    padding: 8px;
+    background: #fff;
+}
+
+/* Événements */
+.events-group {
+    display: none;
+}
+
+.events-group.visible {
+    display: block;
+}
+
+/* Bouton submit */
+.rsvp-submit {
+    width: 100%;
+    padding: 15px 25px;
+    background: #8c4f46;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-submit:hover {
+    background: #6d3d36;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(140, 79, 70, 0.4);
+}
+
+.rsvp-submit.loading .btn-text {
+    opacity: 0;
+}
+
+.rsvp-submit .btn-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.rsvp-submit.loading .btn-loading {
+    opacity: 1;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Message de succès */
+.rsvp-success {
+    display: none;
+    text-align: center;
+    padding: 40px 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    animation: successPop 0.5s ease;
+}
+
+.rsvp-success.visible {
+    display: block;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #8c4f46 0%, #c25107 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: successBounce 0.6s ease 0.2s;
+}
+
+.success-icon svg {
+    width: 35px;
+    height: 35px;
+    stroke: #fff;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: checkDraw 0.4s ease 0.4s forwards;
+}
+
+.rsvp-success h3 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    color: #8c4f46;
+    margin-bottom: 10px;
+}
+
+.rsvp-success p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #5C3D3D;
+    margin-bottom: 5px;
+}
+
+.success-message {
+    font-style: italic;
+    color: #8c4f46 !important;
+    margin-top: 15px !important;
+}
+
+@keyframes successPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes successBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes checkDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 431px) {
+    body {
+        background: linear-gradient(135deg, #D4C4B5 0%, #C0A090 100%);
+    }
+    .hero {
+        box-shadow: 0 0 80px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* Petits écrans */
+@media (max-width: 380px) {
+    .couple-names {
+        font-size: 1.7rem;
+    }
+    .wedding-subtitle {
+        font-size: 1.6rem;
+    }
+    .info-card {
+        padding: 15px 28px;
+    }
+    .date-main {
+        font-size: 1.2rem;
+    }
+    .date-location {
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p:*)",
+      "WebSearch",
+      "WebFetch(domain:fontshub.pro)",
+      "WebFetch(domain:www.onlinewebfonts.com)",
+      "Bash(curl:*)",
+      "Bash(unzip:*)",
+      "Bash(dir /s \"D:\\\\wamp64\\\\www\\\\shirelalan\")",
+      "Bash(copy \"c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(1\\).png\" \"D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\mosaic-bg.png\")",
+      "Bash(copy \"c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(2\\).png\" \"D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\henne-title.png\")",
+      "Bash(cmd /c copy \"c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(1\\).png\" \"D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\mosaic-bg.png\")",
+      "Bash(cmd /c copy \"c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(2\\).png\" \"D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\henne-title.png\")",
+      "Bash(cmd /c dir \"D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(1\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\mosaic-bg.png''\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(2\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\henne-title.png''\")",
+      "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\proad\\\\Downloads\\\\imagedusite'' | Select-Object Name\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\imagedusite\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(3\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\border-ornament.png''\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\imagedusite\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(4\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\lantern-left.png''\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Gemini_Generated_Image_yggkgvyggkgvyggk.png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\floral-bg.png''\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(8\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\hebrew-quote.png''\")",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
