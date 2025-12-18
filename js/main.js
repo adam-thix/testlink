@@ -108,22 +108,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Animation au scroll pour la section invitation =====
-    const invitationSection = document.querySelector('.invitation-section');
+    // ===== Animations au scroll =====
+    const animatedElements = document.querySelectorAll('.henne-card, .houppa-content, .rsvp-content');
 
-    if (invitationSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.2
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
         });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
 
-        observer.observe(invitationSection);
-    }
+    animatedElements.forEach(el => scrollObserver.observe(el));
+
+    // ===== Smooth scroll pour boutons de navigation =====
+    const sectionBtns = document.querySelectorAll('.section-next-btn');
+
+    sectionBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
     // ===== Effet tactile sur le bouton (mobile) =====
     if (btnInvitation) {

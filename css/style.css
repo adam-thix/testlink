@@ -1281,6 +1281,102 @@ body {
     }
 }
 
+/* ===== BOUTONS NAVIGATION SECTIONS ===== */
+.section-next-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 30px;
+    background: #8c4f46;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(140, 79, 70, 0.3);
+}
+
+.section-next-btn:hover {
+    background: #6d3d36;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(140, 79, 70, 0.4);
+}
+
+.section-next-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+    animation: bounceDown 1.5s ease-in-out infinite;
+}
+
+/* ===== ANIMATIONS D'APPARITION ===== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Délais pour apparitions en cascade */
+.fade-in-up.delay-1 { transition-delay: 0.1s; }
+.fade-in-up.delay-2 { transition-delay: 0.2s; }
+.fade-in-up.delay-3 { transition-delay: 0.3s; }
+.fade-in-up.delay-4 { transition-delay: 0.4s; }
+.fade-in-up.delay-5 { transition-delay: 0.5s; }
+
+/* Animation sections au scroll */
+.henne-card,
+.houppa-content,
+.rsvp-content {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.henne-card.animate,
+.houppa-content.animate,
+.rsvp-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== FOOTER CRÉDIT ===== */
+.site-footer {
+    max-width: var(--mobile-width);
+    margin: 0 auto;
+    padding: 20px;
+    background: #5C3D3D;
+    text-align: center;
+}
+
+.footer-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-credit:hover {
+    color: #25D366;
+}
+
+.footer-credit svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
 /* ===== DESKTOP ===== */
 @media (min-width: 431px) {
     body {
