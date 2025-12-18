@@ -75,9 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-                // Débloquer le scroll
-                document.body.classList.remove('no-scroll');
-
                 // Animation de sortie du hero
                 const heroContent = document.querySelector('.hero-content');
                 heroContent.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -218,8 +215,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(rsvpForm);
             const data = {
                 name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone') || '',
                 presence: formData.get('presence'),
                 guests: formData.get('presence') === 'oui' ? formData.get('guests') : '0',
                 events: formData.getAll('events').join(', ') || 'Aucun',
