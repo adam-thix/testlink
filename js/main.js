@@ -5,14 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ===== Fix hauteur viewport iOS =====
-    function setVH() {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setVH();
-    window.addEventListener('resize', setVH);
-
     // ===== Configuration =====
     const CONFIG = {
         // Date du mariage : 16 Mars 2026 à 18h00
@@ -97,24 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== Parallax subtil sur le background =====
-    const heroBackground = document.querySelector('.hero-background img');
-
-    if (heroBackground && window.innerWidth <= 430) {
-        let ticking = false;
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * 0.3;
-                    heroBackground.style.transform = `translateY(${rate}px)`;
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    }
 
     // ===== Animations au scroll =====
     const animatedElements = document.querySelectorAll('.henne-card, .houppa-content, .rsvp-content');
