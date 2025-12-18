@@ -5,6 +5,14 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ===== Fix hauteur viewport iOS =====
+    function setVH() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setVH();
+    window.addEventListener('resize', setVH);
+
     // ===== Configuration =====
     const CONFIG = {
         // Date du mariage : 16 Mars 2026 à 18h00
@@ -67,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
+                // Débloquer le scroll
+                document.body.classList.remove('no-scroll');
+
                 // Animation de sortie du hero
                 const heroContent = document.querySelector('.hero-content');
                 heroContent.style.transition = 'opacity 0.5s ease, transform 0.5s ease';

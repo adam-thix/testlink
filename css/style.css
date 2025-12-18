@@ -57,13 +57,20 @@ body {
     overflow-x: hidden;
 }
 
+/* Bloquer le scroll au départ */
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+    height: 100dvh;
+}
+
 /* ===== LAYOUT MOBILE-FIRST ===== */
 .hero {
     position: relative;
     width: 100%;
     max-width: var(--mobile-width);
     height: 100vh;
-    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100);
     margin: 0 auto;
     overflow: hidden;
 }
