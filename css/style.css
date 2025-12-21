@@ -1408,17 +1408,10 @@ body.no-scroll {
 .fade-in-up.delay-5 { transition-delay: 0.5s; }
 
 /* Animation sections au scroll */
-.henne-card,
-.houppa-content,
-.rsvp-content {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.henne-card.animate,
-.houppa-content.animate,
-.rsvp-content.animate {
+/* Animation des contenus - visible par défaut dans les sections actives */
+.section-page.active .henne-card,
+.section-page.active .houppa-content,
+.section-page.active .rsvp-content {
     opacity: 1;
     transform: translateY(0);
 }
