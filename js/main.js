@@ -21,10 +21,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startBackgroundMusic() {
         if (bgMusic && !musicStarted) {
-            bgMusic.currentTime = 35; // Commencer à 35 secondes
-            bgMusic.volume = 0.3; // Volume à 30%
+            bgMusic.currentTime = 55; // Commencer à 55 secondes
+            bgMusic.volume = 0; // Commencer à 0
             bgMusic.play().then(() => {
                 musicStarted = true;
+                // Fade in de 0 à 30% en 5 secondes
+                let volume = 0;
+                const targetVolume = 0.3;
+                const fadeInterval = setInterval(() => {
+                    volume += 0.006; // 0.3 / 50 steps (5s / 100ms)
+                    if (volume >= targetVolume) {
+                        volume = targetVolume;
+                        clearInterval(fadeInterval);
+                    }
+                    bgMusic.volume = volume;
+                }, 100);
             }).catch(err => {
                 console.log('Autoplay bloqué:', err);
             });
