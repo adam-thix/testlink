@@ -628,8 +628,8 @@ body.no-scroll {
 .houppa-section {
     background: #F5EDE4 url('../images/floral-bg.png') repeat;
     background-size: 400px auto;
-    padding: 50px 15px;
-    justify-content: center;
+    padding: 60px 15px 50px;
+    justify-content: flex-start;
 }
 
 /* Fond floral - overlay */
@@ -960,8 +960,8 @@ body.no-scroll {
 /* ===== SECTION RSVP ===== */
 .rsvp-section {
     background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
-    padding: 50px 20px;
-    justify-content: center;
+    padding: 60px 20px 50px;
+    justify-content: flex-start;
 }
 
 .rsvp-background {
