@@ -439,7 +439,7 @@ body.no-scroll {
     text-align: center;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     padding-top: 150px;
-    margin-top: -130px;
+    margin: -130px auto 0 auto;
 }
 
 /* Titre HENNÉ avec mandala */
@@ -647,7 +647,7 @@ body.no-scroll {
     padding: 40px 30px 50px;
     background: linear-gradient(180deg, #FAF6F1 0%, #F5EDE4 100%);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 /* Monogramme SA */
@@ -973,6 +973,7 @@ body.no-scroll {
     z-index: 2;
     width: 100%;
     max-width: 380px;
+    margin: 0 auto;
 }
 
 .rsvp-title {
