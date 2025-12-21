@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Mariage de Shirel & Alan - 16-18 Mars 2026 - Eilat, Israël">
-    <title>Shirel & Alan - Notre Mariage</title>
+    <meta name="description" content="Mariage de Shirel & Alan - Houppa & Soirée - 18 Mars 2026 - Eilat, Israël">
+    <title>Shirel & Alan - Houppa & Soirée</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="houppa-only">
     <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-background">
@@ -23,7 +23,7 @@
 
             <!-- Bloc rose : date + lieu + countdown -->
             <div class="info-card">
-                <span class="date-main">16-18 Mars 2026</span>
+                <span class="date-main">18 Mars 2026</span>
                 <span class="date-location">Eilat, Israël</span>
 
                 <div class="countdown-timer">
@@ -49,107 +49,16 @@
                 </div>
             </div>
 
-            <!-- Boutons de choix -->
+            <!-- Bouton unique Houppa -->
             <div class="hero-buttons">
-                <button class="btn-event btn-henne" data-target="henne">
-                    <span>Henné</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                </button>
                 <button class="btn-event btn-houppa" data-target="houppa">
-                    <span>Houppa & Soirée</span>
+                    <span>Voir l'invitation</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 5v14M19 12l-7 7-7-7"/>
                     </svg>
                 </button>
             </div>
         </div>
-    </section>
-
-    <!-- Section Henné -->
-    <section id="henne" class="henne-section section-page hidden">
-        <!-- Bouton retour -->
-        <button class="btn-back" onclick="goBack()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            <span>Retour</span>
-        </button>
-
-        <div class="henne-background"></div>
-
-        <!-- Arc oriental en haut -->
-        <div class="henne-arch">
-            <img src="images/arch-top.png" alt="">
-        </div>
-
-        <!-- Lanternes décoratives gauche -->
-        <img src="images/lantern-left.png" alt="" class="henne-lantern henne-lantern-l1">
-        <img src="images/lantern-right.png" alt="" class="henne-lantern henne-lantern-l2">
-        <img src="images/lantern-right.png" alt="" class="henne-lantern henne-lantern-l3">
-        <!-- Lanternes décoratives droite -->
-        <img src="images/lantern-left.png" alt="" class="henne-lantern henne-lantern-r1">
-        <img src="images/lantern-right.png" alt="" class="henne-lantern henne-lantern-r2">
-
-        <div class="henne-card">
-            <!-- Titre avec mandala -->
-            <div class="henne-title">
-                <img src="images/henne-title.png" alt="Henné">
-            </div>
-
-            <!-- Mères des mariés -->
-            <div class="henne-mothers">
-                <span class="mother-name">Mme Zarka Edna</span>
-                <span class="mother-separator">&</span>
-                <span class="mother-name">Mme Bouhnik Anna</span>
-            </div>
-
-            <!-- Texte d'invitation -->
-            <p class="henne-intro">
-                Seront ravies de vous accueillir au Henné<br>
-                traditionnel de leurs enfants
-            </p>
-
-            <!-- Noms du couple avec bordures -->
-            <div class="henne-couple-wrapper">
-                <img src="images/border-ornament.png" alt="" class="couple-border">
-                <h2 class="henne-couple">SHIREL & ALAN</h2>
-                <img src="images/border-ornament.png" alt="" class="couple-border">
-            </div>
-
-            <!-- Date et heure -->
-            <div class="henne-datetime">
-                <span class="henne-date">Lundi 16 Mars 2026</span>
-                <span class="henne-time">À 12h00 précises</span>
-            </div>
-
-            <!-- Lieu -->
-            <div class="henne-location">
-                <span class="henne-venue">A LA LUNA BEACH</span>
-                <span class="henne-venue-sub">(Anciennement Village Beach)</span>
-            </div>
-
-            <!-- Bouton Waze -->
-            <a href="https://waze.com/ul?ll=29.5577,34.9519&navigate=yes" target="_blank" class="henne-waze-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                WAZE
-            </a>
-            <div class="henne-footer">
-                <img src="images/camels-monogram.png" alt="AS">
-            </div>
-
-            <!-- Bouton vers RSVP -->
-            <a href="#rsvp" class="section-next-btn btn-to-rsvp">
-                <span>Confirmer ma présence</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </a>
-        </div>
-
     </section>
 
     <!-- Section Houppa & Soirée -->
@@ -303,20 +212,12 @@
                     </div>
                 </div>
 
-                <!-- Nombre d'invités Henné -->
-                <div class="form-group guests-group" id="guests-henne-group">
-                    <label for="guests-henne">Nombre de personnes pour le Henné</label>
-                    <p class="guests-date">Lundi 16 Mars 2026</p>
-                    <div class="guests-selector">
-                        <button type="button" class="guests-btn minus" onclick="updateGuests('henne', -1)">−</button>
-                        <input type="number" id="guests-henne" name="guests_henne" value="0" min="0" max="20" readonly>
-                        <button type="button" class="guests-btn plus" onclick="updateGuests('henne', 1)">+</button>
-                    </div>
-                </div>
+                <!-- Champ caché pour Henné = 0 -->
+                <input type="hidden" name="guests_henne" value="0">
 
                 <!-- Nombre d'invités Houppa -->
                 <div class="form-group guests-group" id="guests-houppa-group">
-                    <label for="guests-houppa">Nombre de personnes pour la Houppa & Soirée</label>
+                    <label for="guests-houppa">Nombre de personnes</label>
                     <p class="guests-date">Mercredi 18 Mars 2026</p>
                     <div class="guests-selector">
                         <button type="button" class="guests-btn minus" onclick="updateGuests('houppa', -1)">−</button>

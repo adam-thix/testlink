@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         weddingDate: new Date('2026-03-16T18:00:00').getTime()
     };
 
+    // ===== État de l'application =====
+    let currentSection = null;
+    const isHouppaOnly = document.body.classList.contains('houppa-only');
+
     // ===== Countdown Timer =====
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
@@ -57,93 +61,92 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    // ===== Smooth Scroll pour le bouton =====
-    const btnInvitation = document.querySelector('.btn-invitation');
+    // ===== Navigation entre sections =====
+    const hero = document.querySelector('.hero');
+    const henneSection = document.getElementById('henne');
+    const houppaSection = document.getElementById('houppa');
+    const rsvpSection = document.getElementById('rsvp');
+    const eventButtons = document.querySelectorAll('.btn-event');
+    const footer = document.querySelector('.site-footer');
 
-    if (btnInvitation) {
-        btnInvitation.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+    // Fonction pour afficher une section
+    function showSection(sectionId) {
+        // Masquer le hero
+        hero.classList.add('hidden');
 
-            if (targetSection) {
-                // Animation de sortie du hero
-                const heroContent = document.querySelector('.hero-content');
-                heroContent.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                heroContent.style.opacity = '0';
-                heroContent.style.transform = 'translateY(-30px)';
-
-                setTimeout(() => {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-
-                    // Reset pour retour
-                    setTimeout(() => {
-                        heroContent.style.opacity = '1';
-                        heroContent.style.transform = 'translateY(0)';
-                    }, 800);
-                }, 300);
-            }
+        // Masquer toutes les sections
+        document.querySelectorAll('.section-page').forEach(section => {
+            section.classList.remove('active');
         });
+
+        // Afficher la section demandée
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            currentSection = sectionId;
+
+            // Scroll en haut
+            window.scrollTo(0, 0);
+
+            // Animer le contenu
+            const content = targetSection.querySelector('.henne-card, .houppa-content, .rsvp-content');
+            if (content) {
+                content.classList.add('animate');
+            }
+
+            // Afficher le footer sur la section RSVP
+            if (footer) {
+                if (sectionId === 'rsvp') {
+                    footer.classList.add('visible');
+                } else {
+                    footer.classList.remove('visible');
+                }
+            }
+        }
     }
 
-
-    // ===== Animations au scroll =====
-    const animatedElements = document.querySelectorAll('.henne-card, .houppa-content, .rsvp-content');
-
-    const scrollObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
+    // Fonction retour au hero
+    window.goBack = function() {
+        // Masquer toutes les sections
+        document.querySelectorAll('.section-page').forEach(section => {
+            section.classList.remove('active');
         });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+
+        // Masquer le footer
+        if (footer) {
+            footer.classList.remove('visible');
+        }
+
+        // Afficher le hero
+        hero.classList.remove('hidden');
+        currentSection = null;
+
+        // Scroll en haut
+        window.scrollTo(0, 0);
+    };
+
+    // Gestionnaire des boutons événements
+    eventButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const target = this.getAttribute('data-target');
+            showSection(target);
+        });
     });
 
-    animatedElements.forEach(el => scrollObserver.observe(el));
+    // ===== Boutons vers RSVP =====
+    const rsvpButtons = document.querySelectorAll('.btn-to-rsvp, .section-next-btn[href="#rsvp"]');
 
-    // ===== Smooth scroll pour boutons de navigation =====
-    const sectionBtns = document.querySelectorAll('.section-next-btn');
-
-    sectionBtns.forEach(btn => {
+    rsvpButtons.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            showSection('rsvp');
         });
-    });
-
-    // ===== Effet tactile sur le bouton (mobile) =====
-    if (btnInvitation) {
-        btnInvitation.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.95)';
-        });
-
-        btnInvitation.addEventListener('touchend', function() {
-            this.style.transform = 'scale(1)';
-        });
-    }
-
-    // ===== Préchargement des animations =====
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
     });
 
     // ===== RSVP Form =====
     const rsvpForm = document.getElementById('rsvp-form');
-    const guestsGroup = document.getElementById('guests-group');
-    const eventsGroup = document.getElementById('events-group');
+    const guestsHenneGroup = document.getElementById('guests-henne-group');
+    const guestsHouppaGroup = document.getElementById('guests-houppa-group');
     const presenceRadios = document.querySelectorAll('input[name="presence"]');
     const submitBtn = document.getElementById('submit-btn');
     const rsvpSuccess = document.getElementById('rsvp-success');
@@ -159,21 +162,29 @@ document.addEventListener('DOMContentLoaded', function() {
     presenceRadios.forEach(radio => {
         radio.addEventListener('change', function() {
             if (this.value === 'oui') {
-                guestsGroup.classList.add('visible');
-                eventsGroup.classList.add('visible');
+                // Toujours afficher Houppa
+                if (guestsHouppaGroup) guestsHouppaGroup.classList.add('visible');
+
+                // Afficher Henné seulement si pas en mode houppa-only
+                if (!isHouppaOnly && guestsHenneGroup) {
+                    guestsHenneGroup.classList.add('visible');
+                }
             } else {
-                guestsGroup.classList.remove('visible');
-                eventsGroup.classList.remove('visible');
+                if (guestsHenneGroup) guestsHenneGroup.classList.remove('visible');
+                if (guestsHouppaGroup) guestsHouppaGroup.classList.remove('visible');
             }
         });
     });
 
     // Gestion du sélecteur de nombre d'invités
-    window.updateGuests = function(change) {
-        const guestsInput = document.getElementById('guests');
-        let value = parseInt(guestsInput.value) + change;
-        value = Math.max(1, Math.min(10, value));
-        guestsInput.value = value;
+    window.updateGuests = function(event, change) {
+        const inputId = 'guests-' + event;
+        const guestsInput = document.getElementById(inputId);
+        if (guestsInput) {
+            let value = parseInt(guestsInput.value) + change;
+            value = Math.max(0, Math.min(20, value));
+            guestsInput.value = value;
+        }
     };
 
     // Soumission du formulaire
@@ -187,13 +198,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Récupérer les données du formulaire
             const formData = new FormData(rsvpForm);
+
+            // Récupérer les valeurs des invités
+            const guestsHenne = isHouppaOnly ? '0' : (formData.get('guests_henne') || '0');
+            const guestsHouppa = formData.get('guests_houppa') || '0';
+
             const data = {
                 name: formData.get('name'),
                 presence: formData.get('presence'),
-                guests: formData.get('presence') === 'oui' ? formData.get('guests') : '0',
-                events: formData.getAll('events').join(', ') || 'Aucun',
+                guests_henne: guestsHenne,
+                guests_houppa: guestsHouppa,
                 message: formData.get('message') || '',
-                timestamp: new Date().toLocaleString('fr-FR')
+                timestamp: new Date().toLocaleString('fr-FR'),
+                source: isHouppaOnly ? 'houppa-only' : 'full-invite'
             };
 
             try {
@@ -231,5 +248,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // ===== Préchargement des animations =====
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+    });
+
+    // ===== Effet tactile sur les boutons (mobile) =====
+    eventButtons.forEach(btn => {
+        btn.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+
+        btn.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
 
 });

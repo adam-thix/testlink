@@ -223,52 +223,110 @@ body.no-scroll {
     animation: blink 1s ease-in-out infinite;
 }
 
-/* ===== BOUTON (en dehors du bloc) ===== */
-.btn-invitation {
+/* ===== BOUTONS HERO (Henné / Houppa) ===== */
+.hero-buttons {
     position: absolute;
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 350px;
+    padding: 0 20px;
+
+    /* Animation */
+    opacity: 0;
+    animation: fadeInBtn 0.8s ease forwards 1.2s;
+}
+
+.btn-event {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 12px 15px;
+    padding: 14px 20px;
     background: #8c4f46;
     color: #ffffff;
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 500;
-    text-decoration: none;
     text-transform: uppercase;
-    max-width: 350px;
-    width: 100%;
     letter-spacing: 2px;
+    border: none;
     border-radius: 30px;
+    cursor: pointer;
     box-shadow: 0 4px 15px rgba(140, 79, 70, 0.4);
-
-    /* Animation fade in puis breathe */
-    opacity: 0;
-    animation: fadeInBtn 0.8s ease forwards 1.2s, breathe 3s ease-in-out infinite 2s;
+    transition: all 0.3s ease;
 }
 
-.btn-invitation:hover {
+.btn-event:hover {
     background: #6d3d36;
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 6px 20px rgba(140, 79, 70, 0.5);
 }
 
-.btn-invitation span {
+.btn-event svg {
+    width: 14px;
+    height: 14px;
+    stroke: #ffffff;
+}
+
+.btn-henne {
+    background: #c25107;
+}
+
+.btn-henne:hover {
+    background: #a34406;
+}
+
+/* ===== SECTIONS CACHÉES PAR DÉFAUT ===== */
+.section-page {
+    display: none;
+}
+
+.section-page.active {
+    display: flex;
+}
+
+.hero.hidden {
+    display: none;
+}
+
+/* ===== BOUTON RETOUR ===== */
+.btn-back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #8c4f46;
     font-family: var(--font-body);
     font-size: 0.8rem;
     font-weight: 500;
-    color: #ffffff;
-    letter-spacing: 2px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-.btn-invitation svg {
-    width: 14px;
-    height: 14px;
+.btn-back:hover {
+    background: #8c4f46;
+    color: #ffffff;
+}
+
+.btn-back svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-back:hover svg {
     stroke: #ffffff;
 }
 
@@ -1106,10 +1164,20 @@ body.no-scroll {
 /* Sélecteur nombre d'invités */
 .guests-group {
     display: none;
+    margin-bottom: 25px;
 }
 
 .guests-group.visible {
     display: block;
+}
+
+.guests-date {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: #8c4f46;
+    font-style: italic;
+    margin-top: -5px;
+    margin-bottom: 10px;
 }
 
 .guests-selector {
@@ -1149,13 +1217,9 @@ body.no-scroll {
     background: #fff;
 }
 
-/* Événements */
-.events-group {
-    display: none;
-}
-
-.events-group.visible {
-    display: block;
+/* Masquer le groupe henné sur la page houppa-only */
+.houppa-only #guests-henne-group {
+    display: none !important;
 }
 
 /* Bouton submit */
@@ -1360,11 +1424,16 @@ body.no-scroll {
 
 /* ===== FOOTER CRÉDIT ===== */
 .site-footer {
+    display: none;
     max-width: var(--mobile-width);
     margin: 0 auto;
     padding: 20px;
     background: #5C3D3D;
     text-align: center;
+}
+
+.site-footer.visible {
+    display: block;
 }
 
 .footer-credit {
