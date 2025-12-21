@@ -241,6 +241,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const guestsHenne = isHouppaOnly ? '0' : (henneInput ? henneInput.value : '0');
             const guestsHouppa = houppaInput ? houppaInput.value : '0';
 
+            // Debug: afficher les valeurs récupérées
+            console.log('Henné input value:', henneInput ? henneInput.value : 'NOT FOUND');
+            console.log('Houppa input value:', houppaInput ? houppaInput.value : 'NOT FOUND');
+
             const data = {
                 name: formData.get('name'),
                 presence: formData.get('presence'),
@@ -250,6 +254,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 timestamp: new Date().toLocaleString('fr-FR'),
                 source: isHouppaOnly ? 'houppa-only' : 'full-invite'
             };
+
+            // Debug: afficher les données envoyées
+            console.log('Data envoyée:', JSON.stringify(data));
 
             try {
                 // Envoi vers Google Sheets
