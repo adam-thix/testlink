@@ -223,9 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Récupérer les données du formulaire
             const formData = new FormData(rsvpForm);
 
-            // Récupérer les valeurs des invités
-            const guestsHenne = isHouppaOnly ? '0' : (formData.get('guests_henne') || '0');
-            const guestsHouppa = formData.get('guests_houppa') || '0';
+            // Récupérer les valeurs des invités directement depuis les inputs
+            const henneInput = document.getElementById('guests-henne');
+            const houppaInput = document.getElementById('guests-houppa');
+            const guestsHenne = isHouppaOnly ? '0' : (henneInput ? henneInput.value : '0');
+            const guestsHouppa = houppaInput ? houppaInput.value : '0';
 
             const data = {
                 name: formData.get('name'),
