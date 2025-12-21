@@ -1424,17 +1424,14 @@ body.no-scroll {
 }
 
 /* ===== FOOTER CRÉDIT ===== */
-.site-footer {
-    display: none;
-    max-width: var(--mobile-width);
-    margin: 0 auto;
+/* Footer dans RSVP */
+.rsvp-footer {
+    margin-top: 30px;
     padding: 20px;
     background: #5C3D3D;
+    border-radius: 8px;
     text-align: center;
-}
-
-.site-footer.visible {
-    display: block;
+    width: 100%;
 }
 
 .footer-credit {
