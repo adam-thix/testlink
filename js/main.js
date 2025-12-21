@@ -14,6 +14,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== État de l'application =====
     let currentSection = null;
     const isHouppaOnly = document.body.classList.contains('houppa-only');
+    let musicStarted = false;
+
+    // ===== Musique de fond =====
+    const bgMusic = document.getElementById('bg-music');
+
+    function startBackgroundMusic() {
+        if (bgMusic && !musicStarted) {
+            bgMusic.volume = 0.3; // Volume à 30%
+            bgMusic.play().then(() => {
+                musicStarted = true;
+            }).catch(err => {
+                console.log('Autoplay bloqué:', err);
+            });
+        }
+    }
 
     // ===== Countdown Timer =====
     const daysEl = document.getElementById('days');
@@ -126,6 +141,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gestionnaire des boutons événements
     eventButtons.forEach(btn => {
         btn.addEventListener('click', function() {
+            // Démarrer la musique au premier clic (requis pour iOS)
+            startBackgroundMusic();
+
             const target = this.getAttribute('data-target');
             showSection(target);
         });
