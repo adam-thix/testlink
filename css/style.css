@@ -285,12 +285,14 @@ body.no-scroll {
 .section-page {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     height: 100%;
     max-width: var(--mobile-width);
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -626,6 +628,8 @@ body.no-scroll {
 .houppa-section {
     background: #F5EDE4 url('../images/floral-bg.png') repeat;
     background-size: 400px auto;
+    padding: 50px 15px;
+    justify-content: center;
 }
 
 /* Fond floral - overlay */
@@ -956,6 +960,8 @@ body.no-scroll {
 /* ===== SECTION RSVP ===== */
 .rsvp-section {
     background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
+    padding: 50px 20px;
+    justify-content: center;
 }
 
 .rsvp-background {
