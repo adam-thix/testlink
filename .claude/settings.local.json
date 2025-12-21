@@ -27,7 +27,8 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "WebFetch(domain:adam-thix.github.io)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(dir /s /b \"D:\\\\wamp64\\\\www\\\\shirelalan\")"
     ]
   }
 }
