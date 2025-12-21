@@ -49,6 +49,81 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ===== SPLASH SCREEN ===== */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: linear-gradient(180deg, #F5EDE4 0%, #E8DDD5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.splash-names {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    color: #8c4f46;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.splash-subtitle {
+    font-family: var(--font-script);
+    font-size: 1.3rem;
+    color: #5C3D3D;
+    margin-bottom: 40px;
+}
+
+.splash-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: #8c4f46;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 25px rgba(140, 79, 70, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.splash-btn:hover {
+    background: #6d3d36;
+    transform: scale(1.05);
+}
+
+.splash-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 6px 25px rgba(140, 79, 70, 0.4); }
+    50% { box-shadow: 0 8px 35px rgba(140, 79, 70, 0.6); }
+}
+
 body {
     font-family: var(--font-body);
     font-size: 16px;
@@ -350,31 +425,13 @@ body.no-scroll {
 
 /* ===== SECTION HENNÉ ===== */
 .henne-section {
-    position: fixed;
-    max-width: var(--mobile-width);
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 0;
-    padding-bottom: 55px;
-    background: #8e462e;
+    background: #8e462e url('../images/mosaic-bg.png') repeat;
+    background-size: 580px auto;
 }
 
-/* Fond mosaïque */
+/* Fond mosaïque - overlay pour assurer la couverture */
 .henne-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #8e462e;
-    background-image: url('../images/mosaic-bg.png');
-    background-repeat: repeat;
-    background-size: 580px auto;
-    z-index: 1;
+    display: none;
 }
 
 /* Arc oriental en haut */
@@ -617,32 +674,38 @@ body.no-scroll {
     padding-top: 25px;
 }
 
-/* ===== SECTION HOUPPA & SOIRÉE ===== */
-.houppa-section {
-    position: fixed;
-    max-width: var(--mobile-width);
-    min-height: 100vh;
-    min-height: 100dvh;
+/* Boutons navigation Henné */
+.henne-nav-buttons {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 15px;
-    background: #F5EDE4;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
 }
 
-/* Fond floral */
-.houppa-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F5EDE4;
-    background-image: url('../images/floral-bg.png');
-    background-repeat: repeat;
+.henne-nav-buttons .section-next-btn {
+    margin-top: 0;
+}
+
+.btn-to-houppa {
+    background: #5C3D3D;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-to-houppa:hover {
+    background: #4a3030;
+}
+
+/* ===== SECTION HOUPPA & SOIRÉE ===== */
+.houppa-section {
+    background: #F5EDE4 url('../images/floral-bg.png') repeat;
     background-size: 400px auto;
-    z-index: 1;
+}
+
+/* Fond floral - overlay */
+.houppa-background {
+    display: none;
 }
 
 /* Contenu principal avec fond beige */
@@ -967,26 +1030,11 @@ body.no-scroll {
 
 /* ===== SECTION RSVP ===== */
 .rsvp-section {
-    position: fixed;
-    max-width: var(--mobile-width);
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 20px;
-    background: #F5EDE4;
+    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
 }
 
 .rsvp-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
-    z-index: 1;
+    display: none;
 }
 
 .rsvp-content {
@@ -1043,10 +1091,11 @@ body.no-scroll {
     border: 1px solid #d4c4b5;
     border-radius: 8px;
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 16px; /* 16px minimum pour éviter le zoom iOS */
     color: #5C3D3D;
     background: #faf8f6;
     transition: all 0.3s ease;
+    -webkit-appearance: none; /* Désactive le style iOS */
 }
 
 .form-group input:focus,

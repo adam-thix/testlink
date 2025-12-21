@@ -10,8 +10,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-names">SHIREL & ALAN</h1>
+            <p class="splash-subtitle">vous invitent à leur mariage</p>
+            <button id="splash-enter" class="splash-btn">
+                <span>Découvrir l'invitation</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section id="accueil" class="hero">
+    <section id="accueil" class="hero hidden">
         <div class="hero-background">
             <img src="images/hero-bg.jpg" alt="Shirel et Alan">
         </div>
@@ -141,13 +155,21 @@
                 <img src="images/camels-monogram.png" alt="AS">
             </div>
 
-            <!-- Bouton vers RSVP -->
-            <a href="#rsvp" class="section-next-btn btn-to-rsvp">
-                <span>Confirmer ma présence</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </a>
+            <!-- Boutons navigation -->
+            <div class="henne-nav-buttons">
+                <a href="#rsvp" class="section-next-btn btn-to-rsvp">
+                    <span>Confirmer ma présence</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <button class="section-next-btn btn-to-houppa" data-target="houppa">
+                    <span>Voir Houppa & Soirée</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
+            </div>
         </div>
 
     </section>

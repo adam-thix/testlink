@@ -30,6 +30,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // ===== Splash Screen =====
+    const splashScreen = document.getElementById('splash-screen');
+    const splashEnterBtn = document.getElementById('splash-enter');
+    const hero = document.querySelector('.hero');
+
+    if (splashEnterBtn) {
+        splashEnterBtn.addEventListener('click', function() {
+            // Démarrer la musique
+            startBackgroundMusic();
+
+            // Masquer le splash et afficher le hero
+            splashScreen.classList.add('hidden');
+            hero.classList.remove('hidden');
+        });
+    }
+
     // ===== Countdown Timer =====
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
@@ -77,11 +93,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateCountdown, 1000);
 
     // ===== Navigation entre sections =====
-    const hero = document.querySelector('.hero');
     const henneSection = document.getElementById('henne');
     const houppaSection = document.getElementById('houppa');
     const rsvpSection = document.getElementById('rsvp');
     const eventButtons = document.querySelectorAll('.btn-event');
+    const houppaFromHenneBtn = document.querySelector('.btn-to-houppa');
     const footer = document.querySelector('.site-footer');
 
     // Fonction pour afficher une section
@@ -148,6 +164,13 @@ document.addEventListener('DOMContentLoaded', function() {
             showSection(target);
         });
     });
+
+    // Bouton Houppa depuis la section Henné
+    if (houppaFromHenneBtn) {
+        houppaFromHenneBtn.addEventListener('click', function() {
+            showSection('houppa');
+        });
+    }
 
     // ===== Boutons vers RSVP =====
     const rsvpButtons = document.querySelectorAll('.btn-to-rsvp, .section-next-btn[href="#rsvp"]');
