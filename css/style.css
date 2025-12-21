@@ -281,17 +281,35 @@ body.no-scroll {
     background: #a34406;
 }
 
-/* ===== SECTIONS CACHÉES PAR DÉFAUT ===== */
+/* ===== SECTIONS - SYSTÈME DE PAGES ===== */
 .section-page {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: var(--mobile-width);
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    overflow-y: auto;
+    z-index: 10;
 }
 
 .section-page.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .hero.hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* ===== BOUTON RETOUR ===== */
@@ -332,18 +350,17 @@ body.no-scroll {
 
 /* ===== SECTION HENNÉ ===== */
 .henne-section {
-    position: relative;
+    position: fixed;
     max-width: var(--mobile-width);
-    margin: 0 auto;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: #8e462e; */
     justify-content: flex-start;
-    overflow: hidden;
     padding-top: 0;
     padding-bottom: 55px;
+    background: #8e462e;
 }
 
 /* Fond mosaïque */
@@ -602,16 +619,16 @@ body.no-scroll {
 
 /* ===== SECTION HOUPPA & SOIRÉE ===== */
 .houppa-section {
-    position: relative;
+    position: fixed;
     max-width: var(--mobile-width);
-    margin: 0 auto;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     padding: 50px 15px;
+    background: #F5EDE4;
 }
 
 /* Fond floral */
@@ -950,16 +967,16 @@ body.no-scroll {
 
 /* ===== SECTION RSVP ===== */
 .rsvp-section {
-    position: relative;
+    position: fixed;
     max-width: var(--mobile-width);
-    margin: 0 auto;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     padding: 50px 20px;
+    background: #F5EDE4;
 }
 
 .rsvp-background {
@@ -1165,19 +1182,29 @@ body.no-scroll {
 .guests-group {
     display: none;
     margin-bottom: 25px;
+    padding: 15px;
+    background: #faf8f6;
+    border-radius: 10px;
+    border: 1px solid #e8ddd5;
 }
 
 .guests-group.visible {
     display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.guests-group label {
+    font-weight: 600;
+    color: #8c4f46;
 }
 
 .guests-date {
     font-family: var(--font-body);
     font-size: 0.75rem;
-    color: #8c4f46;
+    color: #5C3D3D;
     font-style: italic;
-    margin-top: -5px;
-    margin-bottom: 10px;
+    margin-top: 2px;
+    margin-bottom: 12px;
 }
 
 .guests-selector {

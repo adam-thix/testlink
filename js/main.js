@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour afficher une section
     function showSection(sectionId) {
-        // Masquer le hero
+        // D'abord faire le fade out du hero
         hero.classList.add('hidden');
 
         // Masquer toutes les sections
@@ -79,35 +79,33 @@ document.addEventListener('DOMContentLoaded', function() {
             section.classList.remove('active');
         });
 
-        // Afficher la section demandée
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-            currentSection = sectionId;
+        // Petit délai pour le fade out, puis afficher la nouvelle section
+        setTimeout(() => {
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                currentSection = sectionId;
 
-            // Scroll en haut
-            window.scrollTo(0, 0);
+                // Scroll en haut de la section
+                targetSection.scrollTop = 0;
 
-            // Animer le contenu
-            const content = targetSection.querySelector('.henne-card, .houppa-content, .rsvp-content');
-            if (content) {
-                content.classList.add('animate');
-            }
+                // Animer le contenu
+                const content = targetSection.querySelector('.henne-card, .houppa-content, .rsvp-content');
+                if (content) {
+                    content.classList.add('animate');
+                }
 
-            // Afficher le footer sur la section RSVP
-            if (footer) {
-                if (sectionId === 'rsvp') {
-                    footer.classList.add('visible');
-                } else {
-                    footer.classList.remove('visible');
+                // Afficher le footer sur la section RSVP
+                if (footer) {
+                    footer.classList.toggle('visible', sectionId === 'rsvp');
                 }
             }
-        }
+        }, 100);
     }
 
     // Fonction retour au hero
     window.goBack = function() {
-        // Masquer toutes les sections
+        // D'abord masquer la section active avec fade out
         document.querySelectorAll('.section-page').forEach(section => {
             section.classList.remove('active');
         });
@@ -117,12 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
             footer.classList.remove('visible');
         }
 
-        // Afficher le hero
-        hero.classList.remove('hidden');
-        currentSection = null;
-
-        // Scroll en haut
-        window.scrollTo(0, 0);
+        // Puis afficher le hero avec fade in
+        setTimeout(() => {
+            hero.classList.remove('hidden');
+            currentSection = null;
+            window.scrollTo(0, 0);
+        }, 100);
     };
 
     // Gestionnaire des boutons événements
