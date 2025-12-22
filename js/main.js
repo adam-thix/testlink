@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function startBackgroundMusic() {
         if (bgMusic && !musicStarted) {
-            bgMusic.currentTime = 55; // Commencer à 55 secondes
+            bgMusic.currentTime = 97; // Commencer à 1m37
             bgMusic.volume = 0; // Commencer à 0
             bgMusic.play().then(() => {
                 musicStarted = true;
