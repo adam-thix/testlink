@@ -7,7 +7,7 @@
     <title>Shirel & Alan - Notre Mariage</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=12">
+    <link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
     <!-- Welcome Section - Page d'accueil avec choix de langue -->
@@ -39,8 +39,8 @@
             <h1 class="couple-names">SHIREL & ALAN</h1>
             <p class="wedding-subtitle">The wedding</p>
 
-            <!-- Bloc rose : date + lieu + countdown -->
-            <div class="info-card">
+            <!-- Bloc rose : date + lieu + countdown - FR -->
+            <div class="info-card" data-lang-fr>
                 <span class="date-main">16-18 Mars 2026</span>
                 <span class="date-location">Eilat, Israël</span>
 
@@ -66,9 +66,36 @@
                     </div>
                 </div>
             </div>
+            <!-- Bloc rose : date + lieu + countdown - HE -->
+            <div class="info-card" data-lang-he style="display:none;">
+                <span class="date-main">16-18 במרץ 2026</span>
+                <span class="date-location">אילת, ישראל</span>
 
-            <!-- Boutons de choix -->
-            <div class="hero-buttons">
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <span id="days-he" class="countdown-number">000</span>
+                        <span class="countdown-label">ימים</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="hours-he" class="countdown-number">00</span>
+                        <span class="countdown-label">שעות</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="minutes-he" class="countdown-number">00</span>
+                        <span class="countdown-label">דקות</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="seconds-he" class="countdown-number">00</span>
+                        <span class="countdown-label">שניות</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons de choix - FR -->
+            <div class="hero-buttons" data-lang-fr>
                 <button class="btn-event btn-henne" data-target="henne">
                     <span>Henné</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -77,6 +104,21 @@
                 </button>
                 <button class="btn-event btn-houppa" data-target="houppa">
                     <span>Houppa & Soirée</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Boutons de choix - HE -->
+            <div class="hero-buttons" data-lang-he style="display:none;">
+                <button class="btn-event btn-henne" data-target="henne">
+                    <span>חינה</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <button class="btn-event btn-houppa" data-target="houppa">
+                    <span>חופה ומסיבה</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 5v14M19 12l-7 7-7-7"/>
                     </svg>
@@ -633,6 +675,6 @@
         <source src="audio/background-music.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="js/main.js?v=12"></script>
+    <script src="js/main.js?v=13"></script>
 </body>
 </html>

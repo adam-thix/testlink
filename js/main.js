@@ -47,6 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
+    // Hebrew countdown elements
+    const daysElHe = document.getElementById('days-he');
+    const hoursElHe = document.getElementById('hours-he');
+    const minutesElHe = document.getElementById('minutes-he');
+    const secondsElHe = document.getElementById('seconds-he');
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -54,10 +59,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (distance < 0) {
             // Le jour J est passé
-            daysEl.textContent = '0';
-            hoursEl.textContent = '00';
-            minutesEl.textContent = '00';
-            secondsEl.textContent = '00';
+            if (daysEl) daysEl.textContent = '0';
+            if (hoursEl) hoursEl.textContent = '00';
+            if (minutesEl) minutesEl.textContent = '00';
+            if (secondsEl) secondsEl.textContent = '00';
+            if (daysElHe) daysElHe.textContent = '0';
+            if (hoursElHe) hoursElHe.textContent = '00';
+            if (minutesElHe) minutesElHe.textContent = '00';
+            if (secondsElHe) secondsElHe.textContent = '00';
             return;
         }
 
@@ -66,15 +75,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Mise à jour avec animation
+        // Mise à jour avec animation - FR
         animateNumber(daysEl, days.toString());
         animateNumber(hoursEl, hours.toString().padStart(2, '0'));
         animateNumber(minutesEl, minutes.toString().padStart(2, '0'));
         animateNumber(secondsEl, seconds.toString().padStart(2, '0'));
+        // Mise à jour avec animation - HE
+        animateNumber(daysElHe, days.toString());
+        animateNumber(hoursElHe, hours.toString().padStart(2, '0'));
+        animateNumber(minutesElHe, minutes.toString().padStart(2, '0'));
+        animateNumber(secondsElHe, seconds.toString().padStart(2, '0'));
     }
 
     // Animation subtile lors du changement de nombre
     function animateNumber(element, newValue) {
+        if (!element) return;
         if (element.textContent !== newValue) {
             element.style.transform = 'scale(1.1)';
             element.textContent = newValue;
