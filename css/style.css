@@ -2044,3 +2044,7 @@ body.rtl .radio-label {
     text-align: right;
 }
 
+body.rtl .houppa-title {
+    font-size: 2.2rem;
+}
+
