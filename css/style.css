@@ -2029,3 +2029,18 @@ body.rtl .section-next-btn span {
     font-size: 1.05rem;
 }
 
+/* RTL Radio buttons */
+body.rtl .radio-option {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+body.rtl .radio-custom {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+body.rtl .radio-label {
+    text-align: right;
+}
+

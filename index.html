@@ -7,7 +7,7 @@
     <title>Shirel & Alan - Notre Mariage</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=15">
+    <link rel="stylesheet" href="css/style.css?v=16">
 </head>
 <body>
     <!-- Welcome Section - Page d'accueil avec choix de langue -->
@@ -522,115 +522,70 @@
             <p class="rsvp-subtitle" data-lang-he style="display:none;">אנא השיבו עד 15 בפברואר 2026</p>
 
             <form id="rsvp-form" class="rsvp-form">
-                <!-- Nom - FR -->
-                <div class="form-group" data-lang-fr>
-                    <label for="name">Nom & Prénom *</label>
-                    <input type="text" id="name-fr" name="name" required placeholder="Votre nom complet">
-                </div>
-                <!-- Nom - HE -->
-                <div class="form-group" data-lang-he style="display:none;">
-                    <label for="name-he">* שם מלא</label>
-                    <input type="text" id="name-he" name="name" required placeholder="השם המלא שלך">
+                <!-- Nom -->
+                <div class="form-group">
+                    <label for="name" data-lang-fr>Nom & Prénom *</label>
+                    <label for="name" data-lang-he style="display:none;">* שם מלא</label>
+                    <input type="text" id="name" name="name" required data-placeholder-fr="Votre nom complet" data-placeholder-he="השם המלא שלך" placeholder="Votre nom complet">
                 </div>
 
-                <!-- Présence - FR -->
-                <div class="form-group" data-lang-fr>
-                    <label>Serez-vous présent(e) ? *</label>
+                <!-- Présence -->
+                <div class="form-group">
+                    <label data-lang-fr>Serez-vous présent(e) ? *</label>
+                    <label data-lang-he style="display:none;">* ?האם תגיעו</label>
                     <div class="radio-group">
                         <label class="radio-option">
                             <input type="radio" name="presence" value="oui" required>
                             <span class="radio-custom"></span>
-                            <span class="radio-label">Oui, avec joie !</span>
+                            <span class="radio-label" data-lang-fr>Oui, avec joie !</span>
+                            <span class="radio-label" data-lang-he style="display:none;">!כן, בשמחה</span>
                         </label>
                         <label class="radio-option">
                             <input type="radio" name="presence" value="non">
                             <span class="radio-custom"></span>
-                            <span class="radio-label">Malheureusement non</span>
-                        </label>
-                    </div>
-                </div>
-                <!-- Présence - HE -->
-                <div class="form-group" data-lang-he style="display:none;">
-                    <label>* ?האם תגיעו</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="presence" value="oui" required>
-                            <span class="radio-custom"></span>
-                            <span class="radio-label">!כן, בשמחה</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="presence" value="non">
-                            <span class="radio-custom"></span>
-                            <span class="radio-label">לצערנו לא</span>
+                            <span class="radio-label" data-lang-fr>Malheureusement non</span>
+                            <span class="radio-label" data-lang-he style="display:none;">לצערנו לא</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Nombre d'invités Henné - FR -->
-                <div class="form-group guests-group" id="guests-henne-group" data-lang-fr>
-                    <label for="guests-henne">Nombre de personnes pour le Henné</label>
-                    <p class="guests-date">Lundi 16 Mars 2026</p>
+                <!-- Nombre d'invités Henné -->
+                <div class="form-group guests-group" id="guests-henne-group">
+                    <label for="guests-henne" data-lang-fr>Nombre de personnes pour le Henné</label>
+                    <label data-lang-he style="display:none;">מספר האורחים לחינה</label>
+                    <p class="guests-date" data-lang-fr>Lundi 16 Mars 2026</p>
+                    <p class="guests-date" data-lang-he style="display:none;">יום שני, 16 במרץ 2026</p>
                     <div class="guests-selector">
                         <button type="button" class="guests-btn minus" onclick="updateGuests('henne', -1)">−</button>
                         <input type="number" id="guests-henne" name="guests_henne" value="0" min="0" max="20" readonly>
                         <button type="button" class="guests-btn plus" onclick="updateGuests('henne', 1)">+</button>
                     </div>
                 </div>
-                <!-- Nombre d'invités Henné - HE -->
-                <div class="form-group guests-group" id="guests-henne-group-he" data-lang-he style="display:none;">
-                    <label>מספר האורחים לחינה</label>
-                    <p class="guests-date">יום שני, 16 במרץ 2026</p>
-                    <div class="guests-selector">
-                        <button type="button" class="guests-btn minus" onclick="updateGuests('henne', -1)">−</button>
-                        <input type="number" name="guests_henne" value="0" min="0" max="20" readonly>
-                        <button type="button" class="guests-btn plus" onclick="updateGuests('henne', 1)">+</button>
-                    </div>
-                </div>
 
-                <!-- Nombre d'invités Houppa - FR -->
-                <div class="form-group guests-group" id="guests-houppa-group" data-lang-fr>
-                    <label for="guests-houppa">Nombre de personnes pour la Houppa & Soirée</label>
-                    <p class="guests-date">Mercredi 18 Mars 2026</p>
+                <!-- Nombre d'invités Houppa -->
+                <div class="form-group guests-group" id="guests-houppa-group">
+                    <label for="guests-houppa" data-lang-fr>Nombre de personnes pour la Houppa & Soirée</label>
+                    <label data-lang-he style="display:none;">מספר האורחים לחופה ולמסיבה</label>
+                    <p class="guests-date" data-lang-fr>Mercredi 18 Mars 2026</p>
+                    <p class="guests-date" data-lang-he style="display:none;">יום רביעי, 18 במרץ 2026</p>
                     <div class="guests-selector">
                         <button type="button" class="guests-btn minus" onclick="updateGuests('houppa', -1)">−</button>
                         <input type="number" id="guests-houppa" name="guests_houppa" value="0" min="0" max="20" readonly>
                         <button type="button" class="guests-btn plus" onclick="updateGuests('houppa', 1)">+</button>
                     </div>
                 </div>
-                <!-- Nombre d'invités Houppa - HE -->
-                <div class="form-group guests-group" id="guests-houppa-group-he" data-lang-he style="display:none;">
-                    <label>מספר האורחים לחופה ולמסיבה</label>
-                    <p class="guests-date">יום רביעי, 18 במרץ 2026</p>
-                    <div class="guests-selector">
-                        <button type="button" class="guests-btn minus" onclick="updateGuests('houppa', -1)">−</button>
-                        <input type="number" name="guests_houppa" value="0" min="0" max="20" readonly>
-                        <button type="button" class="guests-btn plus" onclick="updateGuests('houppa', 1)">+</button>
-                    </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message" data-lang-fr>Un petit mot pour les mariés</label>
+                    <label data-lang-he style="display:none;">מילה לחתן ולכלה</label>
+                    <textarea id="message" name="message" rows="3" data-placeholder-fr="Votre message..." data-placeholder-he="...ההודעה שלך" placeholder="Votre message..."></textarea>
                 </div>
 
-                <!-- Message - FR -->
-                <div class="form-group" data-lang-fr>
-                    <label for="message">Un petit mot pour les mariés</label>
-                    <textarea id="message" name="message" rows="3" placeholder="Votre message..."></textarea>
-                </div>
-                <!-- Message - HE -->
-                <div class="form-group" data-lang-he style="display:none;">
-                    <label>מילה לחתן ולכלה</label>
-                    <textarea name="message" rows="3" placeholder="...ההודעה שלך"></textarea>
-                </div>
-
-                <!-- Bouton submit - FR -->
-                <button type="submit" class="rsvp-submit" id="submit-btn" data-lang-fr>
-                    <span class="btn-text">Envoyer ma réponse</span>
-                    <span class="btn-loading">
-                        <svg class="spinner" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="30 70"></circle>
-                        </svg>
-                    </span>
-                </button>
-                <!-- Bouton submit - HE -->
-                <button type="submit" class="rsvp-submit" id="submit-btn-he" data-lang-he style="display:none;">
-                    <span class="btn-text">שלח תשובה</span>
+                <!-- Bouton submit -->
+                <button type="submit" class="rsvp-submit" id="submit-btn">
+                    <span class="btn-text" data-lang-fr>Envoyer ma réponse</span>
+                    <span class="btn-text" data-lang-he style="display:none;">שלח תשובה</span>
                     <span class="btn-loading">
                         <svg class="spinner" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="30 70"></circle>
@@ -639,33 +594,30 @@
                 </button>
             </form>
 
-            <!-- Message de succès - FR -->
-            <div class="rsvp-success" id="rsvp-success" data-lang-fr>
+            <!-- Message de succès -->
+            <div class="rsvp-success" id="rsvp-success">
                 <div class="success-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20 6L9 17l-5-5"/>
                     </svg>
                 </div>
-                <h3>Merci !</h3>
-                <p>Votre réponse a bien été enregistrée.</p>
+                <h3 data-lang-fr>Merci !</h3>
+                <h3 data-lang-he style="display:none;">!תודה רבה</h3>
+                <p data-lang-fr>Votre réponse a bien été enregistrée.</p>
+                <p data-lang-he style="display:none;">התשובה שלך נרשמה בהצלחה.</p>
                 <p class="success-message" id="success-message"></p>
-            </div>
-            <!-- Message de succès - HE -->
-            <div class="rsvp-success" id="rsvp-success-he" data-lang-he style="display:none;">
-                <div class="success-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 6L9 17l-5-5"/>
-                    </svg>
-                </div>
-                <h3>!תודה רבה</h3>
-                <p>התשובה שלך נרשמה בהצלחה.</p>
-                <p class="success-message" id="success-message-he"></p>
             </div>
 
             <!-- Footer crédit -->
             <footer class="rsvp-footer">
-                <a href="https://wa.me/33603729515?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20personnalis%C3%A9%20!" target="_blank" class="footer-credit">
+                <a href="https://wa.me/33603729515?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20personnalis%C3%A9%20!" target="_blank" class="footer-credit" data-lang-fr>
                     <span>Votre site personnalisé</span>
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                </a>
+                <a href="https://wa.me/33603729515?text=Hello%2C%20I%20am%20interested%20in%20creating%20a%20custom%20website!" target="_blank" class="footer-credit" data-lang-he style="display:none;">
+                    <span>האתר המותאם אישית שלך</span>
                     <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
@@ -679,6 +631,6 @@
         <source src="audio/background-music.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="js/main.js?v=15"></script>
+    <script src="js/main.js?v=16"></script>
 </body>
 </html>

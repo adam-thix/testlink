@@ -121,6 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
             el.style.display = lang === 'he' ? '' : 'none';
         });
 
+        // Mettre à jour les placeholders selon la langue
+        document.querySelectorAll('[data-placeholder-fr][data-placeholder-he]').forEach(el => {
+            el.placeholder = lang === 'he' ? el.dataset.placeholderHe : el.dataset.placeholderFr;
+        });
+
         // Ajouter la direction RTL pour l'hébreu
         if (lang === 'he') {
             document.body.classList.add('rtl');
@@ -311,15 +316,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const rsvpForm = document.getElementById('rsvp-form');
     const guestsHenneGroup = document.getElementById('guests-henne-group');
     const guestsHouppaGroup = document.getElementById('guests-houppa-group');
-    const guestsHenneGroupHe = document.getElementById('guests-henne-group-he');
-    const guestsHouppaGroupHe = document.getElementById('guests-houppa-group-he');
     const presenceRadios = document.querySelectorAll('input[name="presence"]');
     const submitBtn = document.getElementById('submit-btn');
-    const submitBtnHe = document.getElementById('submit-btn-he');
     const rsvpSuccess = document.getElementById('rsvp-success');
-    const rsvpSuccessHe = document.getElementById('rsvp-success-he');
     const successMessage = document.getElementById('success-message');
-    const successMessageHe = document.getElementById('success-message-he');
 
     // Configuration RSVP
     const RSVP_CONFIG = {
@@ -331,33 +331,28 @@ document.addEventListener('DOMContentLoaded', function() {
     presenceRadios.forEach(radio => {
         radio.addEventListener('change', function() {
             if (this.value === 'oui') {
-                // Afficher Houppa (FR et HE)
+                // Afficher Houppa
                 if (guestsHouppaGroup) guestsHouppaGroup.classList.add('visible');
-                if (guestsHouppaGroupHe) guestsHouppaGroupHe.classList.add('visible');
 
-                // Afficher Henné seulement si pas en mode houppa-only (FR et HE)
-                if (!isHouppaOnly) {
-                    if (guestsHenneGroup) guestsHenneGroup.classList.add('visible');
-                    if (guestsHenneGroupHe) guestsHenneGroupHe.classList.add('visible');
+                // Afficher Henné seulement si pas en mode houppa-only
+                if (!isHouppaOnly && guestsHenneGroup) {
+                    guestsHenneGroup.classList.add('visible');
                 }
             } else {
                 if (guestsHenneGroup) guestsHenneGroup.classList.remove('visible');
                 if (guestsHouppaGroup) guestsHouppaGroup.classList.remove('visible');
-                if (guestsHenneGroupHe) guestsHenneGroupHe.classList.remove('visible');
-                if (guestsHouppaGroupHe) guestsHouppaGroupHe.classList.remove('visible');
             }
         });
     });
 
-    // Gestion du sélecteur de nombre d'invités (fonctionne pour FR et HE)
+    // Gestion du sélecteur de nombre d'invités
     window.updateGuests = function(event, change) {
-        // Trouver tous les inputs pour cet événement (FR et HE ont le même name)
-        const inputs = document.querySelectorAll('input[name="guests_' + event + '"]');
-        inputs.forEach(input => {
+        const input = document.getElementById('guests-' + event);
+        if (input) {
             let value = parseInt(input.value) + change;
             value = Math.max(0, Math.min(20, value));
             input.value = value;
-        });
+        }
     };
 
     // Soumission du formulaire
@@ -365,19 +360,16 @@ document.addEventListener('DOMContentLoaded', function() {
         rsvpForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Trouver le bon bouton submit selon la langue
-            const activeSubmitBtn = currentLang === 'he' ? submitBtnHe : submitBtn;
-
             // Animation loading
-            if (activeSubmitBtn) {
-                activeSubmitBtn.classList.add('loading');
-                activeSubmitBtn.disabled = true;
+            if (submitBtn) {
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
             }
 
             // Récupérer les données du formulaire
             const formData = new FormData(rsvpForm);
 
-            // Récupérer les valeurs des invités (formData.get prend la première valeur visible)
+            // Récupérer les valeurs des invités
             const guestsHenne = isHouppaOnly ? '0' : (formData.get('guests_henne') || '0');
             const guestsHouppa = formData.get('guests_houppa') || '0';
 
@@ -414,20 +406,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Succès - masquer le formulaire
                 rsvpForm.style.display = 'none';
 
-                // Afficher le bon message de succès selon la langue
-                const activeSuccess = currentLang === 'he' ? rsvpSuccessHe : rsvpSuccess;
-                const activeSuccessMsg = currentLang === 'he' ? successMessageHe : successMessage;
-
-                if (activeSuccess) activeSuccess.classList.add('visible');
+                // Afficher le message de succès
+                if (rsvpSuccess) rsvpSuccess.classList.add('visible');
 
                 // Message personnalisé selon langue et présence
-                if (activeSuccessMsg) {
+                if (successMessage) {
                     if (data.presence === 'oui') {
-                        activeSuccessMsg.textContent = currentLang === 'he'
+                        successMessage.textContent = currentLang === 'he'
                             ? '!נשמח לראותכם ביום המיוחד'
                             : 'Nous avons hâte de vous voir le jour J !';
                     } else {
-                        activeSuccessMsg.textContent = currentLang === 'he'
+                        successMessage.textContent = currentLang === 'he'
                             ? '.תחסרו לנו, אבל אתם בליבנו'
                             : 'Vous nous manquerez, mais nous pensons à vous.';
                     }
@@ -436,9 +425,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } catch (error) {
                 console.error('Erreur:', error);
                 alert(currentLang === 'he' ? 'אירעה שגיאה. אנא נסו שוב.' : 'Une erreur est survenue. Veuillez réessayer.');
-                if (activeSubmitBtn) {
-                    activeSubmitBtn.classList.remove('loading');
-                    activeSubmitBtn.disabled = false;
+                if (submitBtn) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
                 }
             }
         });
