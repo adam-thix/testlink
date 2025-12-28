@@ -64,6 +64,243 @@ body.no-scroll {
     height: 100dvh;
 }
 
+/* ===== WELCOME SECTION (Page d'accueil) ===== */
+.welcome-section {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--mobile-width);
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.welcome-section.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Fond unique pour welcome */
+.welcome-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #F5EDE4 0%, #E8DDD5 50%, #D4C4B5 100%);
+    z-index: 1;
+}
+
+/* Contenu welcome centré */
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 30px;
+}
+
+/* Titre SHIREL & ALAN */
+.welcome-names {
+    font-family: var(--font-title);
+    font-weight: 300;
+    font-size: 34px;
+    color: var(--color-title);
+    text-align: center;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.3s;
+}
+
+/* The Wedding */
+.welcome-subtitle {
+    font-family: var(--font-script);
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #8c4f46;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.6s;
+}
+
+/* Boutons de choix de langue */
+.welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 280px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 1s;
+}
+
+.btn-welcome {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 30px;
+    background: transparent;
+    color: var(--color-title);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-title);
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-welcome:hover {
+    background: var(--color-title);
+    color: #ffffff;
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba(140, 79, 70, 0.3);
+}
+
+.btn-hebrew {
+    font-size: 1.1rem;
+    direction: rtl;
+}
+
+/* ===== LOADER SECTIONS ===== */
+.loader-section {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: var(--mobile-width);
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader-section.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Loader Henné - fond beige */
+.loader-henne {
+    background: #F5EBE0;
+}
+
+/* Loader Houppa - fond beige */
+.loader-houppa {
+    background: #F5EBE0;
+}
+
+.loader-icon-houppa {
+    width: 200px;
+    animation: loaderPulse 2s ease-in-out infinite;
+}
+
+@keyframes loaderPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* Contenu du loader */
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 40px;
+}
+
+/* Icône centrale (chameau) */
+.loader-icon {
+    width: 180px;
+    height: auto;
+    margin-bottom: 40px;
+    animation: loaderBounce 2s ease-in-out infinite;
+}
+
+@keyframes loaderBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Points de chargement */
+.loader-dots {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.loader-dots .dot {
+    width: 12px;
+    height: 12px;
+    background: #8c4f46;
+    border-radius: 50%;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.loader-dots .dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loader-dots .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader-dots .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Monogramme en bas */
+.loader-monogram {
+    position: absolute;
+    bottom: 60px;
+    width: 170px;
+    height: auto;
+    opacity: 0.4;
+}
+
 /* ===== LAYOUT MOBILE-FIRST ===== */
 .hero {
     position: relative;
@@ -352,94 +589,65 @@ body.no-scroll {
 
 /* ===== SECTION HENNÉ ===== */
 .henne-section {
-    background: #8e462e url('../images/mosaic-bg.png') repeat;
-    background-size: 580px auto;
+    background: #F5EBE0;
 }
 
-/* Fond mosaïque - overlay pour assurer la couverture */
+/* Fond - overlay */
 .henne-background {
     display: none;
 }
 
-/* Arc oriental en haut */
+/* Arc oriental en haut (nouveau design) */
 .henne-arch {
     position: relative;
     z-index: 3;
     width: 100%;
-    margin-bottom: -1px;
+    margin-bottom: 0;
 }
 
 .henne-arch img {
     width: 100%;
-    margin: auto;
-    max-width: 351px;
+    max-width: 430px;
     height: auto;
-    margin-top: 15px;
     display: block;
-    z-index: 6;
-    position: relative;
+    margin: 0 auto;
 }
 
-/* Lanternes décoratives */
-.henne-lantern {
+/* Bordures dentelle sur les côtés */
+.henne-lace-border {
     position: absolute;
-    z-index: 4;
-    width: 50px;
+    z-index: 1;
+    width: 23px;
     height: auto;
-    transform-origin: top center;
-    animation: lanternSwing 4s ease-in-out infinite, lanternGlow 3s ease-in-out infinite;
+    top: 15%;
+    bottom: 0;
+    object-fit: contain;
+    object-position: top;
+    opacity: 0.6;
 }
 
-/* Lanternes gauche */
-.henne-lantern-l1 {
-    left: 15px;
-    top: 16%;
-    z-index: 3;
-    animation-delay: 0s;
+.henne-lace-left {
+    left: 0;
 }
 
-.henne-lantern-l2 {
-    left: 55px;
-    top: 3%;
-    max-width: 28px;
-    animation-delay: 1.5s;
-}
-
-.henne-lantern-l3 {
-    left: 33px;
-    top: 8%;
-    max-width: 20px;
-    animation-delay: 3s;
-}
-
-/* Lanternes droite */
-.henne-lantern-r1 {
-    right: 15px;
-    top: 14%;
-    z-index: 3;
-    animation-delay: 0.8s;
-}
-
-.henne-lantern-r2 {
-    right: 50px;
-    top: 4%;
-    max-width: 25px;
-    animation-delay: 2.2s;
+.henne-lace-right {
+    right: 0;
+    transform: scaleX(-1);
 }
 
 /* Carte beige centrale */
 .henne-card {
     position: relative;
     z-index: 2;
-    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 100%);
+    background: #f5ebe0;
     border-radius: 0;
     padding: 40px 25px 35px;
-    width: 100%;
+    width: 90%;
     max-width: 350px;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    padding-top: 150px;
-    margin: -130px auto 0 auto;
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); */
+    padding-top: 30px;
+    margin: -20px auto 0 auto;
 }
 
 /* Titre HENNÉ avec mandala */
@@ -626,31 +834,38 @@ body.no-scroll {
 
 /* ===== SECTION HOUPPA & SOIRÉE ===== */
 .houppa-section {
-    background: #F5EDE4 url('../images/floral-bg.png') repeat;
-    background-size: 400px auto;
-    padding: 60px 15px 50px;
+    background: #F5EBE0;
+    padding: 40px 15px 50px;
     justify-content: flex-start;
 }
 
-/* Fond floral - overlay */
+/* Fond - overlay */
 .houppa-background {
     display: none;
 }
 
-/* Contenu principal avec fond beige */
+/* Contenu principal */
 .houppa-content {
     position: relative;
     z-index: 2;
-    width: 92%;
-    max-width: 380px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    padding: 40px 30px 50px;
-    background: linear-gradient(180deg, #FAF6F1 0%, #F5EDE4 100%);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    margin: 20px auto;
+    padding: 20px 25px 50px;
+    margin: 0 auto;
 }
 
-/* Monogramme SA */
+/* בס"ד en haut à droite */
+.houppa-bsd {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 0.9rem;
+    color: #5C3D3D;
+    direction: rtl;
+}
+
+/* Monogramme SA floral */
 .houppa-monogram {
     margin-bottom: 20px;
     text-align: center;
@@ -658,20 +873,33 @@ body.no-scroll {
 
 .houppa-monogram img {
     width: 100%;
-    max-width: 100px;
+    max-width: 120px;
     height: auto;
 }
 
 /* Titre HOUPPA & SOIRÉE */
 .houppa-title {
     font-family: var(--font-title);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #8c4f46;
     letter-spacing: 0.08em;
     margin-bottom: 15px;
 }
 
-/* Texte hébreu (image) */
+/* Texte hébreu (quote) */
+.houppa-hebrew-quote {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.houppa-hebrew-quote p {
+    font-size: 0.85rem;
+    color: #8c4f46;
+    direction: rtl;
+    font-style: italic;
+}
+
+/* Ancien style pour compatibilité */
 .houppa-hebrew {
     margin-bottom: 25px;
     text-align: center;
@@ -828,7 +1056,7 @@ body.no-scroll {
     color: #ffffff;
 }
 
-/* Image hôtel */
+/* Image hôtel (ancien) */
 .houppa-hotel-image {
     width: 100%;
     margin-bottom: 20px;
@@ -837,6 +1065,20 @@ body.no-scroll {
 }
 
 .houppa-hotel-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Image venue (aquarelle Houppa) */
+.houppa-venue-image {
+    /* width: 100%; */
+    margin-bottom: 20px;
+    /* border-radius: 8px; */
+    /* overflow: hidden; */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+}
+
+.houppa-venue-image img {
     width: 100%;
     height: auto;
 }
@@ -852,6 +1094,7 @@ body.no-scroll {
 
 /* Dédicace */
 .houppa-dedication {
+    position: relative;
     border-top: 1px solid #d4c4b5;
     padding-top: 20px;
 }
@@ -872,6 +1115,159 @@ body.no-scroll {
 .dedication-closing {
     margin-top: 10px !important;
     font-style: italic;
+}
+
+/* Colombe */
+.dedication-dove {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    width: 60px;
+    height: auto;
+}
+
+/* ===== SECTION VOTRE SÉJOUR ===== */
+.sejour-section {
+    background: #F5EBE0;
+    padding: 40px 15px 50px;
+    justify-content: flex-start;
+}
+
+.sejour-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px 20px 50px;
+    margin: 0 auto;
+}
+
+/* Header avec chameau et avion */
+.sejour-header {
+    margin-bottom: 25px;
+}
+
+.sejour-header img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+/* Titre */
+.sejour-title {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    color: #8c4f46;
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
+}
+
+/* Intro */
+.sejour-intro {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #5C3D3D;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Signature */
+.sejour-signature {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: #8c4f46;
+    margin-bottom: 25px;
+}
+
+/* Image hôtel */
+.sejour-hotel-image {
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sejour-hotel-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Liste des hôtels */
+.sejour-hotels {
+    margin-bottom: 30px;
+}
+
+.sejour-subtitle {
+    font-family: var(--font-title);
+    font-size: 20px;
+    color: #D4763A;
+    letter-spacing: 0.03em;
+    margin-bottom: 15px;
+}
+
+.hotel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.hotel-list li {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #5C3D3D;
+    padding: 5px 0;
+    position: relative;
+}
+
+.hotel-list li::before {
+    content: "•";
+    color: #8c4f46;
+    margin-right: 8px;
+}
+
+/* Contact */
+.sejour-contact {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: #5C3D3D;
+    line-height: 1.5;
+}
+
+.contact-phone {
+    color: #8c4f46;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-phone:hover {
+    text-decoration: underline;
+}
+
+/* AirBnB */
+.sejour-airbnb {
+    margin-bottom: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #d4c4b5;
+}
+
+.sejour-airbnb-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #5C3D3D;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Footer avec monogramme */
+.sejour-footer {
+    margin-bottom: -10px;
+}
+
+.sejour-monogram {
+    width: 240px;
+    height: auto;
+    opacity: 0.5;
+    margin-left: 35px;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -1369,6 +1765,7 @@ body.no-scroll {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
+    border: 0;
     gap: 8px;
     max-width: 350px;
     width: 100%;
@@ -1485,5 +1882,61 @@ body.no-scroll {
     .date-location {
         font-size: 1rem;
     }
+}
+
+/* ===== RTL SUPPORT (HEBREW) ===== */
+body.rtl {
+    direction: rtl;
+}
+
+body.rtl .henne-mothers,
+body.rtl .henne-intro,
+body.rtl .henne-datetime,
+body.rtl .henne-location,
+body.rtl .houppa-parents,
+body.rtl .houppa-intro,
+body.rtl .houppa-ceremony-text,
+body.rtl .houppa-date,
+body.rtl .houppa-venue,
+body.rtl .houppa-cocktail,
+body.rtl .houppa-dedication,
+body.rtl .rsvp-title,
+body.rtl .rsvp-subtitle,
+body.rtl .form-group label,
+body.rtl .radio-label,
+body.rtl .guests-date,
+body.rtl .rsvp-success h3,
+body.rtl .rsvp-success p {
+    direction: rtl;
+    text-align: center;
+}
+
+body.rtl input[type="text"],
+body.rtl textarea {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .btn-back {
+    left: auto;
+    right: 15px;
+}
+
+body.rtl .btn-back svg {
+    transform: rotate(180deg);
+}
+
+body.rtl .section-next-btn svg {
+    transform: rotate(180deg);
+}
+
+body.rtl .houppa-bsd {
+    right: auto;
+    left: 10px;
+}
+
+body.rtl .dedication-dove {
+    right: auto;
+    left: -10px;
 }
 

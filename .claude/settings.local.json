@@ -28,7 +28,17 @@
       "Bash(git pull:*)",
       "WebFetch(domain:adam-thix.github.io)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(dir /s /b \"D:\\\\wamp64\\\\www\\\\shirelalan\")"
+      "Bash(dir /s /b \"D:\\\\wamp64\\\\www\\\\shirelalan\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Frank Sinatra   I Love You Baby.mp3'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\audio\\\\background-music.mp3'' -Force\")",
+      "Bash(nslookup:*)",
+      "WebFetch(domain:script.google.com)",
+      "WebFetch(domain:script.googleusercontent.com)",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(9\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\arch-header.png''\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(10\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\lace-border.png''\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(13\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\camels-monogram.png'' -Force\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(12\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\loader-camel.png'' -Force\")",
+      "Bash(powershell -Command \"Copy-Item ''c:\\\\Users\\\\proad\\\\Downloads\\\\Seront ravies de vous accueillir à la soirée traditionnelle du \\(14\\).png'' -Destination ''D:\\\\wamp64\\\\www\\\\shirelalan\\\\images\\\\loader-sa.png'' -Force\")",
+      "Bash(powershell -Command:*)"
     ]
   }
 }

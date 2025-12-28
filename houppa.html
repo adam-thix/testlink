@@ -7,11 +7,29 @@
     <title>Shirel & Alan - Houppa & Soirée</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="css/style.css?v=12">
 </head>
 <body class="houppa-only">
+    <!-- Welcome Section - Page d'accueil avec choix de langue -->
+    <section id="welcome" class="welcome-section">
+        <div class="welcome-background"></div>
+        <div class="welcome-content">
+            <h1 class="welcome-names">SHIREL & ALAN</h1>
+            <p class="welcome-subtitle">The wedding</p>
+
+            <div class="welcome-buttons">
+                <button class="btn-welcome btn-french" data-lang="fr">
+                    <span>Voir l'invitation</span>
+                </button>
+                <button class="btn-welcome btn-hebrew" data-lang="he">
+                    <span>לראות את ההזמנה</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Hero Section -->
-    <section id="accueil" class="hero">
+    <section id="accueil" class="hero hidden">
         <div class="hero-background">
             <img src="images/hero-bg.jpg" alt="Shirel et Alan">
         </div>
@@ -61,6 +79,18 @@
         </div>
     </section>
 
+    <!-- Loader Houppa -->
+    <section id="loader-houppa" class="loader-section loader-houppa">
+        <div class="loader-content">
+            <img src="images/loader-houppa-sa.png" alt="" class="loader-icon loader-icon-houppa">
+            <div class="loader-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Houppa & Soirée -->
     <section id="houppa" class="houppa-section section-page hidden">
         <!-- Bouton retour -->
@@ -74,17 +104,20 @@
         <div class="houppa-background"></div>
 
         <div class="houppa-content">
-            <!-- Monogramme SA -->
+            <!-- בס"ד en haut à droite -->
+            <span class="houppa-bsd">בס"ד</span>
+
+            <!-- Monogramme SA floral -->
             <div class="houppa-monogram">
-                <img src="images/monogram-sa.png" alt="S & A">
+                <img src="images/loader-houppa-sa.png" alt="S & A">
             </div>
 
             <!-- Titre -->
             <h2 class="houppa-title">HOUPPA & SOIRÉE</h2>
 
             <!-- Texte hébreu -->
-            <div class="houppa-hebrew">
-                <img src="images/hebrew-quote.png" alt="קול ששון וקול שמחה, קול חתן וקול כלה">
+            <div class="houppa-hebrew-quote">
+                <p>"קול ששון וקול שמחה, קול חתן וקול כלה"</p>
             </div>
 
             <!-- Parents -->
@@ -123,7 +156,7 @@
             <!-- Date -->
             <div class="houppa-date">
                 <span class="houppa-date-main">Mercredi 18 Mars 2026</span>
-                <span class="houppa-date-hebrew">א׳ ניסן ה׳תשפ״ו</span>
+                <span class="houppa-date-hebrew">א' ניסן 5786</span>
                 <span class="houppa-time">À 16h00 précises</span>
             </div>
 
@@ -141,9 +174,9 @@
                 WAZE
             </a>
 
-            <!-- Image hôtel -->
-            <div class="houppa-hotel-image">
-                <img src="images/herods-hotel.png" alt="Herods Hotel Eilat">
+            <!-- Image venue (aquarelle Houppa) -->
+            <div class="houppa-venue-image">
+                <img src="images/houppa-venue.png" alt="Cérémonie Houppa">
             </div>
 
             <!-- Texte cocktail -->
@@ -155,19 +188,91 @@
             <!-- Dédicace -->
             <div class="houppa-dedication">
                 <p>Une douce et tendre pensée pour nos Mamies & Papis</p>
-                <p class="dedication-names">Aaron & Berthe Abihbol.</p>
-                <p class="dedication-names">Felix Khmus & Messada Bouhnik.</p>
-                <p class="dedication-names">Lilo & Madeleine Zarka.</p>
+                <p class="dedication-names">Aaron & Berthe Abitbol ז"ל</p>
+                <p class="dedication-names">Felix Kahmus & Messada Bouhnik ז"ל</p>
+                <p class="dedication-names">Lilo & Madeleine Zarka ז"ל</p>
                 <p class="dedication-closing">Que leur souvenir soit une source de bénédiction.</p>
+                <!-- Colombe -->
+                <img src="images/dove.png" alt="" class="dedication-dove">
             </div>
 
-            <!-- Bouton vers RSVP -->
-            <a href="#rsvp" class="section-next-btn">
+            <!-- Bouton vers Séjour -->
+            <button class="section-next-btn btn-to-sejour" data-target="sejour">
+                <span>Infos séjour</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section Votre Séjour -->
+    <section id="sejour" class="sejour-section section-page hidden">
+        <!-- Bouton retour -->
+        <button class="btn-back" onclick="goBack()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Retour</span>
+        </button>
+
+        <div class="sejour-content">
+            <!-- Header avec chameau et avion -->
+            <div class="sejour-header">
+                <img src="images/sejour-header.png" alt="Votre Séjour - Eilat">
+            </div>
+
+            <!-- Intro -->
+            <h2 class="sejour-title">CHÈRE FAMILLE, CHÈRE AMIS.</h2>
+            <p class="sejour-intro">
+                Nous avons hâte de vivre des moments inoubliables à vos côtés. En attendant, voici quelques recommandations afin de faciliter votre organisation.
+            </p>
+            <p class="sejour-signature">Shirel & Alan</p>
+
+            <!-- Image hôtel -->
+            <div class="sejour-hotel-image">
+                <img src="images/sejour-hotel.png" alt="Vue Eilat">
+            </div>
+
+            <!-- Liste des hôtels -->
+            <div class="sejour-hotels">
+                <h3 class="sejour-subtitle">LES HÔTELS QU'ON PEUT VOUS CONSEILLER :</h3>
+                <ul class="hotel-list">
+                    <li>Isrotel Royal Beach</li>
+                    <li>Herods Palace</li>
+                    <li>Astral Village / Astral Palma</li>
+                    <li>King Salomon</li>
+                    <li>Isrotel Riviera Club</li>
+                    <li>Queen of Sheba</li>
+                    <li>Isrotel Royal Garden</li>
+                    <li>Isrotel Sport Club</li>
+                </ul>
+                <p class="sejour-contact">
+                    Vous pouvez contacter <strong>Jennifer</strong> pour profiter de bons plans hôtels<br>
+                    <a href="tel:054-877-7626" class="contact-phone">054-877-7626</a>
+                </p>
+            </div>
+
+            <!-- AirBnB -->
+            <div class="sejour-airbnb">
+                <h3 class="sejour-subtitle">AIR BNB</h3>
+                <p class="sejour-airbnb-text">
+                    pour toutes sortes de logements, appartement ou villa contactez Laurent Fitoussi <a href="tel:052-223-5779" class="contact-phone">052-223-5779</a> depuis Israel et <a href="https://wa.me/33177501278" target="_blank" class="contact-phone">whatsapp 0177501278</a> depuis la France.
+                </p>
+            </div>
+
+            <!-- Monogramme -->
+            <div class="sejour-footer">
+                <img src="images/loader-sa.png" alt="S & A" class="sejour-monogram">
+            </div>
+
+            <!-- Bouton vers confirmation -->
+            <button class="section-next-btn btn-to-rsvp" data-target="rsvp">
                 <span>Confirmer ma présence</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 5v14M19 12l-7 7-7-7"/>
                 </svg>
-            </a>
+            </button>
         </div>
     </section>
 
@@ -271,6 +376,6 @@
         <source src="audio/background-music.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="js/main.js?v=5"></script>
+    <script src="js/main.js?v=12"></script>
 </body>
 </html>

@@ -88,13 +88,63 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
+    // ===== Welcome Section =====
+    const welcomeSection = document.getElementById('welcome');
+    const welcomeButtons = document.querySelectorAll('.btn-welcome');
+    let currentLang = 'fr'; // Langue par défaut
+
+    // Fonction pour changer la langue
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.body.setAttribute('data-lang', lang);
+
+        // Afficher/masquer les éléments selon la langue
+        document.querySelectorAll('[data-lang-fr]').forEach(el => {
+            el.style.display = lang === 'fr' ? '' : 'none';
+        });
+        document.querySelectorAll('[data-lang-he]').forEach(el => {
+            el.style.display = lang === 'he' ? '' : 'none';
+        });
+
+        // Ajouter la direction RTL pour l'hébreu
+        if (lang === 'he') {
+            document.body.classList.add('rtl');
+        } else {
+            document.body.classList.remove('rtl');
+        }
+    }
+
+    // Gestionnaire des boutons welcome
+    welcomeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+
+            // Définir la langue
+            setLanguage(lang);
+
+            // Démarrer la musique
+            startBackgroundMusic();
+
+            // Masquer la section welcome
+            welcomeSection.classList.add('hidden');
+
+            // Afficher le hero
+            setTimeout(() => {
+                hero.classList.remove('hidden');
+            }, 300);
+        });
+    });
+
     // ===== Navigation entre sections =====
     const hero = document.querySelector('.hero');
     const henneSection = document.getElementById('henne');
     const houppaSection = document.getElementById('houppa');
+    const sejourSection = document.getElementById('sejour');
     const rsvpSection = document.getElementById('rsvp');
     const eventButtons = document.querySelectorAll('.btn-event');
     const houppaFromHenneBtn = document.querySelector('.btn-to-houppa');
+    const sejourFromHouppaBtn = document.querySelector('.btn-to-sejour');
+    const rsvpFromSejourBtn = document.querySelector('.sejour-section .btn-to-rsvp');
     const footer = document.querySelector('.site-footer');
 
     // Fonction pour afficher une section
@@ -118,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 targetSection.scrollTop = 0;
 
                 // Animer le contenu
-                const content = targetSection.querySelector('.henne-card, .houppa-content, .rsvp-content');
+                const content = targetSection.querySelector('.henne-card, .houppa-content, .sejour-content, .rsvp-content');
                 if (content) {
                     content.classList.add('animate');
                 }
@@ -151,6 +201,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     };
 
+    // ===== Loaders =====
+    const loaderHenne = document.getElementById('loader-henne');
+    const LOADER_DURATION = 2000; // 2 secondes
+
+    // Fonction pour afficher une section avec loader
+    function showSectionWithLoader(sectionId) {
+        const loaderId = 'loader-' + sectionId;
+        const loader = document.getElementById(loaderId);
+
+        if (loader) {
+            // Masquer le hero
+            hero.classList.add('hidden');
+
+            // Afficher le loader
+            loader.classList.add('active');
+
+            // Après le délai, masquer le loader et afficher la section
+            setTimeout(() => {
+                loader.classList.remove('active');
+                setTimeout(() => {
+                    showSection(sectionId);
+                }, 300);
+            }, LOADER_DURATION);
+        } else {
+            // Pas de loader, afficher directement la section
+            showSection(sectionId);
+        }
+    }
+
     // Gestionnaire des boutons événements
     eventButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -158,14 +237,48 @@ document.addEventListener('DOMContentLoaded', function() {
             startBackgroundMusic();
 
             const target = this.getAttribute('data-target');
-            showSection(target);
+
+            // Utiliser le loader pour henné et houppa
+            if (target === 'henne' || target === 'houppa') {
+                showSectionWithLoader(target);
+            } else {
+                showSection(target);
+            }
         });
     });
 
     // Bouton Houppa depuis la section Henné
     if (houppaFromHenneBtn) {
         houppaFromHenneBtn.addEventListener('click', function() {
-            showSection('houppa');
+            // Masquer la section Henné d'abord
+            document.getElementById('henne').classList.remove('active');
+            // Afficher le loader puis la section Houppa
+            showSectionWithLoader('houppa');
+        });
+    }
+
+    // Bouton Séjour/RSVP depuis la section Houppa
+    if (sejourFromHouppaBtn) {
+        sejourFromHouppaBtn.addEventListener('click', function() {
+            // Masquer la section Houppa d'abord
+            document.getElementById('houppa').classList.remove('active');
+
+            // En hébreu, aller directement au RSVP (pas de Séjour)
+            if (currentLang === 'he') {
+                showSection('rsvp');
+            } else {
+                showSection('sejour');
+            }
+        });
+    }
+
+    // Bouton RSVP depuis la section Séjour
+    if (rsvpFromSejourBtn) {
+        rsvpFromSejourBtn.addEventListener('click', function() {
+            // Masquer la section Séjour d'abord
+            document.getElementById('sejour').classList.remove('active');
+            // Afficher la section RSVP
+            showSection('rsvp');
         });
     }
 
