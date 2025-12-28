@@ -1940,3 +1940,92 @@ body.rtl .dedication-dove {
     left: -10px;
 }
 
+/* Hebrew font sizes - légèrement plus grandes */
+body.rtl .henne-mothers .mother-name {
+    font-size: 1.15rem;
+}
+
+body.rtl .henne-intro {
+    font-size: 1.1rem;
+}
+
+body.rtl .henne-datetime .henne-date {
+    font-size: 1.15rem;
+}
+
+body.rtl .henne-datetime .henne-time {
+    font-size: 1.05rem;
+}
+
+body.rtl .henne-location .henne-venue {
+    font-size: 1.15rem;
+}
+
+body.rtl .houppa-parents .parent-name {
+    font-size: 1.05rem;
+}
+
+body.rtl .houppa-intro {
+    font-size: 1.1rem;
+}
+
+body.rtl .houppa-ceremony-text {
+    font-size: 1.05rem;
+}
+
+body.rtl .houppa-date .houppa-date-main {
+    font-size: 1.15rem;
+}
+
+body.rtl .houppa-date .houppa-time {
+    font-size: 1.1rem;
+}
+
+body.rtl .houppa-venue .venue-name {
+    font-size: 1.1rem;
+}
+
+body.rtl .houppa-cocktail {
+    font-size: 1.05rem;
+}
+
+body.rtl .houppa-dedication p {
+    font-size: 0.95rem;
+}
+
+body.rtl .rsvp-title {
+    font-size: 1.6rem;
+}
+
+body.rtl .rsvp-subtitle {
+    font-size: 1.05rem;
+}
+
+body.rtl .form-group label {
+    font-size: 1.05rem;
+}
+
+body.rtl .radio-label {
+    font-size: 1.05rem;
+}
+
+body.rtl .guests-date {
+    font-size: 0.95rem;
+}
+
+body.rtl .rsvp-submit .btn-text {
+    font-size: 1.1rem;
+}
+
+body.rtl .countdown-label {
+    font-size: 0.7rem;
+}
+
+body.rtl .btn-event span {
+    font-size: 1.1rem;
+}
+
+body.rtl .section-next-btn span {
+    font-size: 1.05rem;
+}
+

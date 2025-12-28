@@ -311,10 +311,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const rsvpForm = document.getElementById('rsvp-form');
     const guestsHenneGroup = document.getElementById('guests-henne-group');
     const guestsHouppaGroup = document.getElementById('guests-houppa-group');
+    const guestsHenneGroupHe = document.getElementById('guests-henne-group-he');
+    const guestsHouppaGroupHe = document.getElementById('guests-houppa-group-he');
     const presenceRadios = document.querySelectorAll('input[name="presence"]');
     const submitBtn = document.getElementById('submit-btn');
+    const submitBtnHe = document.getElementById('submit-btn-he');
     const rsvpSuccess = document.getElementById('rsvp-success');
+    const rsvpSuccessHe = document.getElementById('rsvp-success-he');
     const successMessage = document.getElementById('success-message');
+    const successMessageHe = document.getElementById('success-message-he');
 
     // Configuration RSVP
     const RSVP_CONFIG = {
@@ -326,29 +331,33 @@ document.addEventListener('DOMContentLoaded', function() {
     presenceRadios.forEach(radio => {
         radio.addEventListener('change', function() {
             if (this.value === 'oui') {
-                // Toujours afficher Houppa
+                // Afficher Houppa (FR et HE)
                 if (guestsHouppaGroup) guestsHouppaGroup.classList.add('visible');
+                if (guestsHouppaGroupHe) guestsHouppaGroupHe.classList.add('visible');
 
-                // Afficher Henné seulement si pas en mode houppa-only
-                if (!isHouppaOnly && guestsHenneGroup) {
-                    guestsHenneGroup.classList.add('visible');
+                // Afficher Henné seulement si pas en mode houppa-only (FR et HE)
+                if (!isHouppaOnly) {
+                    if (guestsHenneGroup) guestsHenneGroup.classList.add('visible');
+                    if (guestsHenneGroupHe) guestsHenneGroupHe.classList.add('visible');
                 }
             } else {
                 if (guestsHenneGroup) guestsHenneGroup.classList.remove('visible');
                 if (guestsHouppaGroup) guestsHouppaGroup.classList.remove('visible');
+                if (guestsHenneGroupHe) guestsHenneGroupHe.classList.remove('visible');
+                if (guestsHouppaGroupHe) guestsHouppaGroupHe.classList.remove('visible');
             }
         });
     });
 
-    // Gestion du sélecteur de nombre d'invités
+    // Gestion du sélecteur de nombre d'invités (fonctionne pour FR et HE)
     window.updateGuests = function(event, change) {
-        const inputId = 'guests-' + event;
-        const guestsInput = document.getElementById(inputId);
-        if (guestsInput) {
-            let value = parseInt(guestsInput.value) + change;
+        // Trouver tous les inputs pour cet événement (FR et HE ont le même name)
+        const inputs = document.querySelectorAll('input[name="guests_' + event + '"]');
+        inputs.forEach(input => {
+            let value = parseInt(input.value) + change;
             value = Math.max(0, Math.min(20, value));
-            guestsInput.value = value;
-        }
+            input.value = value;
+        });
     };
 
     // Soumission du formulaire
@@ -356,22 +365,21 @@ document.addEventListener('DOMContentLoaded', function() {
         rsvpForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
+            // Trouver le bon bouton submit selon la langue
+            const activeSubmitBtn = currentLang === 'he' ? submitBtnHe : submitBtn;
+
             // Animation loading
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
+            if (activeSubmitBtn) {
+                activeSubmitBtn.classList.add('loading');
+                activeSubmitBtn.disabled = true;
+            }
 
             // Récupérer les données du formulaire
             const formData = new FormData(rsvpForm);
 
-            // Récupérer les valeurs des invités directement depuis les inputs
-            const henneInput = document.getElementById('guests-henne');
-            const houppaInput = document.getElementById('guests-houppa');
-            const guestsHenne = isHouppaOnly ? '0' : (henneInput ? henneInput.value : '0');
-            const guestsHouppa = houppaInput ? houppaInput.value : '0';
-
-            // Debug: afficher les valeurs récupérées
-            console.log('Henné input value:', henneInput ? henneInput.value : 'NOT FOUND');
-            console.log('Houppa input value:', houppaInput ? houppaInput.value : 'NOT FOUND');
+            // Récupérer les valeurs des invités (formData.get prend la première valeur visible)
+            const guestsHenne = isHouppaOnly ? '0' : (formData.get('guests_henne') || '0');
+            const guestsHouppa = formData.get('guests_houppa') || '0';
 
             const data = {
                 name: formData.get('name'),
@@ -380,7 +388,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 guests_houppa: guestsHouppa,
                 message: formData.get('message') || '',
                 timestamp: new Date().toLocaleString('fr-FR'),
-                source: isHouppaOnly ? 'houppa-only' : 'full-invite'
+                source: isHouppaOnly ? 'houppa-only' : 'full-invite',
+                language: currentLang
             };
 
             // Debug: afficher les données envoyées
@@ -402,22 +411,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Simulation de délai pour le test
                 await new Promise(resolve => setTimeout(resolve, 1500));
 
-                // Succès
+                // Succès - masquer le formulaire
                 rsvpForm.style.display = 'none';
-                rsvpSuccess.classList.add('visible');
 
-                // Message personnalisé
-                if (data.presence === 'oui') {
-                    successMessage.textContent = `Nous avons hâte de vous voir le jour J !`;
-                } else {
-                    successMessage.textContent = `Vous nous manquerez, mais nous pensons à vous.`;
+                // Afficher le bon message de succès selon la langue
+                const activeSuccess = currentLang === 'he' ? rsvpSuccessHe : rsvpSuccess;
+                const activeSuccessMsg = currentLang === 'he' ? successMessageHe : successMessage;
+
+                if (activeSuccess) activeSuccess.classList.add('visible');
+
+                // Message personnalisé selon langue et présence
+                if (activeSuccessMsg) {
+                    if (data.presence === 'oui') {
+                        activeSuccessMsg.textContent = currentLang === 'he'
+                            ? '!נשמח לראותכם ביום המיוחד'
+                            : 'Nous avons hâte de vous voir le jour J !';
+                    } else {
+                        activeSuccessMsg.textContent = currentLang === 'he'
+                            ? '.תחסרו לנו, אבל אתם בליבנו'
+                            : 'Vous nous manquerez, mais nous pensons à vous.';
+                    }
                 }
 
             } catch (error) {
                 console.error('Erreur:', error);
-                alert('Une erreur est survenue. Veuillez réessayer.');
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
+                alert(currentLang === 'he' ? 'אירעה שגיאה. אנא נסו שוב.' : 'Une erreur est survenue. Veuillez réessayer.');
+                if (activeSubmitBtn) {
+                    activeSubmitBtn.classList.remove('loading');
+                    activeSubmitBtn.disabled = false;
+                }
             }
         });
     }
