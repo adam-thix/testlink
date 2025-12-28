@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const sejourSection = document.getElementById('sejour');
     const rsvpSection = document.getElementById('rsvp');
     const eventButtons = document.querySelectorAll('.btn-event');
-    const houppaFromHenneBtn = document.querySelector('.btn-to-houppa');
-    const sejourFromHouppaBtn = document.querySelector('.btn-to-sejour');
+    const houppaFromHenneBtns = document.querySelectorAll('.btn-to-houppa');
+    const sejourFromHouppaBtns = document.querySelectorAll('.btn-to-sejour');
     const rsvpFromSejourBtn = document.querySelector('.sejour-section .btn-to-rsvp');
     const footer = document.querySelector('.site-footer');
 
@@ -262,19 +262,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Bouton Houppa depuis la section Henné
-    if (houppaFromHenneBtn) {
-        houppaFromHenneBtn.addEventListener('click', function() {
+    // Boutons Houppa depuis la section Henné (FR et HE)
+    houppaFromHenneBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
             // Masquer la section Henné d'abord
             document.getElementById('henne').classList.remove('active');
             // Afficher le loader puis la section Houppa
             showSectionWithLoader('houppa');
         });
-    }
+    });
 
-    // Bouton Séjour/RSVP depuis la section Houppa
-    if (sejourFromHouppaBtn) {
-        sejourFromHouppaBtn.addEventListener('click', function() {
+    // Boutons Séjour/RSVP depuis la section Houppa (FR et HE)
+    sejourFromHouppaBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
             // Masquer la section Houppa d'abord
             document.getElementById('houppa').classList.remove('active');
 
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showSection('sejour');
             }
         });
-    }
+    });
 
     // Bouton RSVP depuis la section Séjour
     if (rsvpFromSejourBtn) {
