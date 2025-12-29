@@ -316,7 +316,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const rsvpForm = document.getElementById('rsvp-form');
     const guestsHenneGroup = document.getElementById('guests-henne-group');
     const guestsHouppaGroup = document.getElementById('guests-houppa-group');
-    const presenceRadios = document.querySelectorAll('input[name="presence"]');
+    const henneEventGroup = document.getElementById('henne-event-group');
+    const presenceHouppaRadios = document.querySelectorAll('input[name="presence_houppa"]');
+    const presenceHenneRadios = document.querySelectorAll('input[name="presence_henne"]');
     const submitBtn = document.getElementById('submit-btn');
     const rsvpSuccess = document.getElementById('rsvp-success');
     const successMessage = document.getElementById('success-message');
@@ -327,20 +329,29 @@ document.addEventListener('DOMContentLoaded', function() {
         emailTo: 'troublea88@gmail.com'
     };
 
-    // Afficher/masquer les champs selon la présence
-    presenceRadios.forEach(radio => {
+    // Masquer la section Henné si mode houppa-only
+    if (isHouppaOnly && henneEventGroup) {
+        henneEventGroup.style.display = 'none';
+    }
+
+    // Afficher/masquer le compteur Houppa selon la présence
+    presenceHouppaRadios.forEach(radio => {
         radio.addEventListener('change', function() {
             if (this.value === 'oui') {
-                // Afficher Houppa
-                if (guestsHouppaGroup) guestsHouppaGroup.classList.add('visible');
-
-                // Afficher Henné seulement si pas en mode houppa-only
-                if (!isHouppaOnly && guestsHenneGroup) {
-                    guestsHenneGroup.classList.add('visible');
-                }
+                if (guestsHouppaGroup) guestsHouppaGroup.style.display = 'block';
             } else {
-                if (guestsHenneGroup) guestsHenneGroup.classList.remove('visible');
-                if (guestsHouppaGroup) guestsHouppaGroup.classList.remove('visible');
+                if (guestsHouppaGroup) guestsHouppaGroup.style.display = 'none';
+            }
+        });
+    });
+
+    // Afficher/masquer le compteur Henné selon la présence
+    presenceHenneRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'oui') {
+                if (guestsHenneGroup) guestsHenneGroup.style.display = 'block';
+            } else {
+                if (guestsHenneGroup) guestsHenneGroup.style.display = 'none';
             }
         });
     });
@@ -369,15 +380,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Récupérer les données du formulaire
             const formData = new FormData(rsvpForm);
 
-            // Récupérer les valeurs des invités
-            const guestsHenne = isHouppaOnly ? '0' : (formData.get('guests_henne') || '0');
-            const guestsHouppa = formData.get('guests_houppa') || '0';
+            // Récupérer les présences et nombre d'invités
+            const presenceHouppa = formData.get('presence_houppa') || 'non';
+            const presenceHenne = isHouppaOnly ? 'non' : (formData.get('presence_henne') || 'non');
+            const guestsHouppa = presenceHouppa === 'oui' ? (formData.get('guests_houppa') || '1') : '0';
+            const guestsHenne = presenceHenne === 'oui' ? (formData.get('guests_henne') || '1') : '0';
 
             const data = {
                 name: formData.get('name'),
-                presence: formData.get('presence'),
-                guests_henne: guestsHenne,
+                presence_houppa: presenceHouppa,
                 guests_houppa: guestsHouppa,
+                presence_henne: presenceHenne,
+                guests_henne: guestsHenne,
                 message: formData.get('message') || '',
                 timestamp: new Date().toLocaleString('fr-FR'),
                 source: isHouppaOnly ? 'houppa-only' : 'full-invite',
@@ -411,7 +425,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Message personnalisé selon langue et présence
                 if (successMessage) {
-                    if (data.presence === 'oui') {
+                    const viendra = data.presence_houppa === 'oui' || data.presence_henne === 'oui';
+                    if (viendra) {
                         successMessage.textContent = currentLang === 'he'
                             ? '!נשמח לראותכם ביום המיוחד'
                             : 'Nous avons hâte de vous voir le jour J !';

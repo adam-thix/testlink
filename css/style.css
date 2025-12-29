@@ -880,7 +880,7 @@ body.no-scroll {
 /* Titre HOUPPA & SOIRÉE */
 .houppa-title {
     font-family: var(--font-title);
-    font-size: 1.5rem;
+    font-size: 28px;
     color: #8c4f46;
     letter-spacing: 0.08em;
     margin-bottom: 15px;
@@ -897,6 +897,11 @@ body.no-scroll {
     color: #8c4f46;
     direction: rtl;
     font-style: italic;
+}
+
+.houppa-hebrew-quote img {
+    max-width: 85%;
+    height: auto;
 }
 
 /* Ancien style pour compatibilité */
@@ -954,19 +959,21 @@ body.no-scroll {
     font-family: var(--font-script);
     font-size: 2.2rem;
     color: #8c4f46;
+    font-weight: 700;
 }
 
 .houppa-amp {
     font-family: var(--font-script);
     font-size: 1.5rem;
-    color: #C9A86C;
+    color: #8c4f46;
+    font-weight: 700;
 }
 
 /* Noms hébreux */
 .houppa-hebrew-names {
     display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
+    justify-content: center;
+    gap: 50px;
     margin-bottom: 15px;
 }
 
@@ -1000,7 +1007,7 @@ body.no-scroll {
 }
 
 .houppa-date-hebrew {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     color: #8c4f46;
     margin: 3px 0;
 }
@@ -1080,6 +1087,7 @@ body.no-scroll {
 
 .houppa-venue-image img {
     width: 100%;
+    max-width: 260px;
     height: auto;
 }
 
@@ -1175,9 +1183,10 @@ body.no-scroll {
 /* Signature */
 .sejour-signature {
     font-family: var(--font-script);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #8c4f46;
     margin-bottom: 25px;
+    font-weight: 700;
 }
 
 /* Image hôtel */
@@ -1190,6 +1199,7 @@ body.no-scroll {
 .sejour-hotel-image img {
     width: 100%;
     height: auto;
+    max-width: 270px;
 }
 
 /* Liste des hôtels */
@@ -1470,9 +1480,11 @@ body.no-scroll {
 .radio-custom {
     width: 20px;
     height: 20px;
+    display: block;
     border: 2px solid #d4c4b5;
     border-radius: 50%;
     margin-right: 12px;
+    top: 16px;
     position: relative;
     transition: all 0.3s ease;
 }
@@ -1559,6 +1571,44 @@ body.no-scroll {
 }
 
 /* Sélecteur nombre d'invités */
+.event-group {
+    margin-bottom: 25px;
+    padding: 20px 15px;
+    background: #faf8f6;
+    border-radius: 10px;
+    border: 1px solid #e8ddd5;
+}
+
+.event-title {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #8c4f46;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.event-group .guests-date {
+    margin-bottom: 15px;
+}
+
+.event-group .radio-group {
+    margin-bottom: 15px;
+}
+
+.guests-selector-wrapper {
+    padding-top: 15px;
+    border-top: 1px solid #e8ddd5;
+}
+
+.guests-selector-wrapper label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8c4f46;
+    display: block;
+    margin-bottom: 10px;
+}
+
 .guests-group {
     display: none;
     margin-bottom: 25px;
@@ -1911,6 +1961,17 @@ body.rtl .rsvp-success p {
     text-align: center;
 }
 
+body.rtl .houppa-couple {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 5px;
+    flex-direction: row-reverse;
+}
+
+
+
 body.rtl input[type="text"],
 body.rtl textarea {
     direction: rtl;
@@ -2045,6 +2106,6 @@ body.rtl .radio-label {
 }
 
 body.rtl .houppa-title {
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
 }
 
