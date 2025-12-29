@@ -589,7 +589,8 @@ body.no-scroll {
 
 /* ===== SECTION HENNÉ ===== */
 .henne-section {
-    background: #F5EBE0;
+    background: url('../images/page-background.png') center center / cover no-repeat;
+    background-attachment: scroll;
 }
 
 /* Fond - overlay */
@@ -834,7 +835,8 @@ body.no-scroll {
 
 /* ===== SECTION HOUPPA & SOIRÉE ===== */
 .houppa-section {
-    background: #F5EBE0;
+    background: url('../images/page-background.png') center center / cover no-repeat;
+    background-attachment: scroll;
     padding: 40px 15px 50px;
     justify-content: flex-start;
 }
@@ -1136,7 +1138,8 @@ body.no-scroll {
 
 /* ===== SECTION VOTRE SÉJOUR ===== */
 .sejour-section {
-    background: #F5EBE0;
+    background: url('../images/page-background.png') center center / cover no-repeat;
+    background-attachment: scroll;
     padding: 40px 15px 50px;
     justify-content: flex-start;
 }
@@ -1365,7 +1368,8 @@ body.no-scroll {
 
 /* ===== SECTION RSVP ===== */
 .rsvp-section {
-    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
+    background: url('../images/page-background.png') center center / cover no-repeat;
+    background-attachment: scroll;
     padding: 60px 20px 50px;
     justify-content: flex-start;
 }
