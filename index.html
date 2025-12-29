@@ -530,37 +530,6 @@
                     <input type="text" id="name" name="name" required data-placeholder-fr="Votre nom complet" data-placeholder-he="השם המלא שלך" placeholder="Votre nom complet">
                 </div>
 
-                <!-- Présence Houppa -->
-                <div class="form-group event-group">
-                    <label class="event-title" data-lang-fr>Houppa & Soirée</label>
-                    <label class="event-title" data-lang-he style="display:none;">חופה ומסיבה</label>
-                    <p class="guests-date" data-lang-fr>Mercredi 18 Mars 2026</p>
-                    <p class="guests-date" data-lang-he style="display:none;">יום רביעי, 18 במרץ 2026</p>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="presence_houppa" value="oui" required>
-                            <span class="radio-custom"></span>
-                            <span class="radio-label" data-lang-fr>Oui</span>
-                            <span class="radio-label" data-lang-he style="display:none;">כן</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="presence_houppa" value="non">
-                            <span class="radio-custom"></span>
-                            <span class="radio-label" data-lang-fr>Non</span>
-                            <span class="radio-label" data-lang-he style="display:none;">לא</span>
-                        </label>
-                    </div>
-                    <div class="guests-selector-wrapper" id="guests-houppa-group" style="display:none;">
-                        <label data-lang-fr>Nombre de personnes</label>
-                        <label data-lang-he style="display:none;">מספר אורחים</label>
-                        <div class="guests-selector">
-                            <button type="button" class="guests-btn minus" onclick="updateGuests('houppa', -1)">−</button>
-                            <input type="number" id="guests-houppa" name="guests_houppa" value="1" min="1" max="20" readonly>
-                            <button type="button" class="guests-btn plus" onclick="updateGuests('houppa', 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Présence Henné -->
                 <div class="form-group event-group" id="henne-event-group">
                     <label class="event-title" data-lang-fr>Henné</label>
@@ -588,6 +557,37 @@
                             <button type="button" class="guests-btn minus" onclick="updateGuests('henne', -1)">−</button>
                             <input type="number" id="guests-henne" name="guests_henne" value="1" min="1" max="20" readonly>
                             <button type="button" class="guests-btn plus" onclick="updateGuests('henne', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Présence Houppa -->
+                <div class="form-group event-group">
+                    <label class="event-title" data-lang-fr>Houppa & Soirée</label>
+                    <label class="event-title" data-lang-he style="display:none;">חופה ומסיבה</label>
+                    <p class="guests-date" data-lang-fr>Mercredi 18 Mars 2026</p>
+                    <p class="guests-date" data-lang-he style="display:none;">יום רביעי, 18 במרץ 2026</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="presence_houppa" value="oui" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-label" data-lang-fr>Oui</span>
+                            <span class="radio-label" data-lang-he style="display:none;">כן</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="presence_houppa" value="non">
+                            <span class="radio-custom"></span>
+                            <span class="radio-label" data-lang-fr>Non</span>
+                            <span class="radio-label" data-lang-he style="display:none;">לא</span>
+                        </label>
+                    </div>
+                    <div class="guests-selector-wrapper" id="guests-houppa-group" style="display:none;">
+                        <label data-lang-fr>Nombre de personnes</label>
+                        <label data-lang-he style="display:none;">מספר אורחים</label>
+                        <div class="guests-selector">
+                            <button type="button" class="guests-btn minus" onclick="updateGuests('houppa', -1)">−</button>
+                            <input type="number" id="guests-houppa" name="guests_houppa" value="1" min="1" max="20" readonly>
+                            <button type="button" class="guests-btn plus" onclick="updateGuests('houppa', 1)">+</button>
                         </div>
                     </div>
                 </div>

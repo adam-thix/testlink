@@ -1489,7 +1489,7 @@ body.no-scroll {
     position: relative;
     transition: all 0.3s ease;
     position: absolute;
-    right: 0;
+    right: 10px;
 }
 
 .radio-option input:checked + .radio-custom {
