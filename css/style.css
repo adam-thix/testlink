@@ -2111,6 +2111,11 @@ body.rtl .radio-label {
     text-align: right;
 }
 
+body.rtl .houppa-hebrew-names {
+
+    flex-direction: row-reverse;
+}
+
 body.rtl .houppa-title {
     /* font-size: 2.2rem; */
 }
