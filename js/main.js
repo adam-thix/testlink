@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configuration RSVP
     const RSVP_CONFIG = {
         googleScriptUrl: 'https://script.google.com/macros/s/AKfycbwKe2vXlnFC00o8H80aUWlMiOR_DslEjt7tDrknplSS7x89H07wrAbtBAFZ4CbX8PmesQ/exec',
-        emailTo: 'troublea88@gmail.com'
+        emailTo: 'troublea88@gmail.com,alanbouhnik@hotmail.fr'
     };
 
     // Masquer la section Henné si mode houppa-only
