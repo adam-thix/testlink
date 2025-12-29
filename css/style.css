@@ -589,8 +589,7 @@ body.no-scroll {
 
 /* ===== SECTION HENNÉ ===== */
 .henne-section {
-    background: url('../images/page-background.png') center center / cover no-repeat;
-    background-attachment: scroll;
+    background: #F5EBE0;
 }
 
 /* Fond - overlay */
@@ -835,8 +834,7 @@ body.no-scroll {
 
 /* ===== SECTION HOUPPA & SOIRÉE ===== */
 .houppa-section {
-    background: url('../images/page-background.png') center center / cover no-repeat;
-    background-attachment: scroll;
+    background: #F5EBE0;
     padding: 40px 15px 50px;
     justify-content: flex-start;
 }
@@ -882,7 +880,8 @@ body.no-scroll {
 /* Titre HOUPPA & SOIRÉE */
 .houppa-title {
     font-family: var(--font-title);
-    font-size: 28px;
+    font-size: 30px;
+    font-weight: bold;
     color: #8c4f46;
     letter-spacing: 0.08em;
     margin-bottom: 15px;
@@ -1138,8 +1137,7 @@ body.no-scroll {
 
 /* ===== SECTION VOTRE SÉJOUR ===== */
 .sejour-section {
-    background: url('../images/page-background.png') center center / cover no-repeat;
-    background-attachment: scroll;
+    background: #F5EBE0;
     padding: 40px 15px 50px;
     justify-content: flex-start;
 }
@@ -1368,8 +1366,7 @@ body.no-scroll {
 
 /* ===== SECTION RSVP ===== */
 .rsvp-section {
-    background: url('../images/page-background.png') center center / cover no-repeat;
-    background-attachment: scroll;
+    background: linear-gradient(180deg, #F5EDE4 0%, #EDE4D8 50%, #E8DDD5 100%);
     padding: 60px 20px 50px;
     justify-content: flex-start;
 }
