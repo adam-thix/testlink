@@ -879,12 +879,14 @@ body.no-scroll {
 
 /* Titre HOUPPA & SOIRÉE */
 .houppa-title {
-    font-family: var(--font-title);
-    font-size: 30px;
-    font-weight: bold;
-    color: #8c4f46;
-    letter-spacing: 0.08em;
     margin-bottom: 15px;
+    text-align: center;
+}
+
+.houppa-title img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
 }
 
 /* Texte hébreu (quote) */
