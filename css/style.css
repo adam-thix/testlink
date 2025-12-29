@@ -884,7 +884,7 @@ body.no-scroll {
 }
 
 .houppa-title img {
-    max-width: 280px;
+    max-width: 100%;
     width: 100%;
     height: auto;
 }
