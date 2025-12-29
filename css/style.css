@@ -1418,6 +1418,7 @@ body.no-scroll {
     color: #5C3D3D;
     margin-bottom: 8px;
     font-weight: 500;
+    position: relative;
 }
 
 .form-group input[type="text"],
@@ -1487,6 +1488,8 @@ body.no-scroll {
     top: 16px;
     position: relative;
     transition: all 0.3s ease;
+    position: absolute;
+    right: 0;
 }
 
 .radio-option input:checked + .radio-custom {
