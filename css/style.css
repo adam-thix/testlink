@@ -1838,6 +1838,12 @@ body.no-scroll {
     justify-content: center;
 }
 
+.rsvp-content .section-next-btn {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .section-next-btn:hover {
     background: #6d3d36;
     transform: translateY(-3px);
