@@ -510,6 +510,20 @@ body.no-scroll {
     stroke: #ffffff;
 }
 
+.btn-rsvp-hero {
+    background: transparent;
+    border: 2px solid #ffffff;
+    box-shadow: none;
+    font-size: 0.75rem;
+    padding: 10px 20px;
+    letter-spacing: 1.5px;
+}
+
+.btn-rsvp-hero:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
 .btn-henne {
     background: #c25107;
 }
