@@ -384,7 +384,7 @@ body.no-scroll {
 /* ===== BLOC ROSE ===== */
 .info-card {
     position: absolute;
-    bottom: 18%;
+    bottom: 24%;
     left: 50%;
     transform: translateX(-50%);
     background: #d6908661;
@@ -463,7 +463,7 @@ body.no-scroll {
 /* ===== BOUTONS HERO (Henné / Houppa) ===== */
 .hero-buttons {
     position: absolute;
-    bottom: 5%;
+    bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
