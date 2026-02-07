@@ -275,15 +275,15 @@
                 <img src="images/dove.png" alt="" class="dedication-dove">
             </div>
 
-            <!-- Bouton vers Séjour - FR -->
-            <button class="section-next-btn btn-to-sejour" data-target="sejour" data-lang-fr>
-                <span>Infos séjour</span>
+            <!-- Bouton vers RSVP - FR -->
+            <button class="section-next-btn btn-to-rsvp-from-houppa" data-target="rsvp" data-lang-fr>
+                <span>Confirmer ma présence</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 5v14M19 12l-7 7-7-7"/>
                 </svg>
             </button>
-            <!-- Bouton vers RSVP direct - HE -->
-            <button class="section-next-btn btn-to-sejour" data-target="rsvp" data-lang-he style="display:none;">
+            <!-- Bouton vers RSVP - HE -->
+            <button class="section-next-btn btn-to-rsvp-from-houppa" data-target="rsvp" data-lang-he style="display:none;">
                 <span>אישור הגעה</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 5v14M19 12l-7 7-7-7"/>
@@ -353,13 +353,6 @@
                 <img src="images/loader-sa.png" alt="S & A" class="sejour-monogram">
             </div>
 
-            <!-- Bouton vers confirmation -->
-            <button class="section-next-btn btn-to-rsvp" data-target="rsvp">
-                <span>Confirmer ma présence</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </button>
         </div>
     </section>
 
@@ -459,6 +452,14 @@
                 <p data-lang-he style="display:none;">התשובה שלך נרשמה בהצלחה.</p>
                 <p class="success-message" id="success-message"></p>
             </div>
+
+            <!-- Bouton vers Séjour (FR uniquement) -->
+            <button class="section-next-btn btn-to-sejour-from-rsvp" data-target="sejour" data-lang-fr>
+                <span>Infos séjour</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+            </button>
 
             <!-- Footer crédit -->
             <footer class="rsvp-footer">

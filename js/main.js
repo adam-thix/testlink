@@ -163,8 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const rsvpSection = document.getElementById('rsvp');
     const eventButtons = document.querySelectorAll('.btn-event');
     const houppaFromHenneBtns = document.querySelectorAll('.btn-to-houppa');
-    const sejourFromHouppaBtns = document.querySelectorAll('.btn-to-sejour');
-    const rsvpFromSejourBtn = document.querySelector('.sejour-section .btn-to-rsvp');
+    const rsvpFromHouppaBtns = document.querySelectorAll('.btn-to-rsvp-from-houppa');
+    const sejourFromRsvpBtns = document.querySelectorAll('.btn-to-sejour-from-rsvp');
     const footer = document.querySelector('.site-footer');
 
     // Fonction pour afficher une section
@@ -277,30 +277,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Boutons Séjour/RSVP depuis la section Houppa (FR et HE)
-    sejourFromHouppaBtns.forEach(btn => {
+    // Boutons RSVP depuis la section Houppa (FR et HE)
+    rsvpFromHouppaBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Masquer la section Houppa d'abord
             document.getElementById('houppa').classList.remove('active');
-
-            // En hébreu, aller directement au RSVP (pas de Séjour)
-            if (currentLang === 'he') {
-                showSection('rsvp');
-            } else {
-                showSection('sejour');
-            }
+            showSection('rsvp');
         });
     });
 
-    // Bouton RSVP depuis la section Séjour
-    if (rsvpFromSejourBtn) {
-        rsvpFromSejourBtn.addEventListener('click', function() {
-            // Masquer la section Séjour d'abord
-            document.getElementById('sejour').classList.remove('active');
-            // Afficher la section RSVP
-            showSection('rsvp');
+    // Boutons Séjour depuis la section RSVP (FR uniquement)
+    sejourFromRsvpBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Masquer la section RSVP d'abord
+            document.getElementById('rsvp').classList.remove('active');
+            showSection('sejour');
         });
-    }
+    });
 
     // ===== Boutons vers RSVP =====
     const rsvpButtons = document.querySelectorAll('.btn-to-rsvp, .section-next-btn[href="#rsvp"]');
