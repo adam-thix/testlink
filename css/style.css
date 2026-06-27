@@ -119,15 +119,17 @@ body.no-scroll {
 }
 
 .welcome-names {
+    display: inline-block;
+    width: auto;
     font-family: var(--font-script);
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: #9d3204;
     text-align: center;
     letter-spacing: 0.01em;
-    line-height: 1.15;
+    line-height: 1.2;
     white-space: nowrap;
-    padding: 0.12em 0.45em;
+    padding: 0.6em 1em 0.35em;
     /* révélation gauche -> droite avec un bord d'encre doux */
     -webkit-mask-image: linear-gradient(to right, #000 60%, rgba(0,0,0,0) 70%);
     mask-image: linear-gradient(to right, #000 60%, rgba(0,0,0,0) 70%);
