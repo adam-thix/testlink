@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Mariage de Shirel & Alan - 16-18 Mars 2026 - Eilat, Israël">
+    <meta name="description" content="Mariage de Shirel & Alan - Dimanche 23 Août 2026 - Césarée, Israël">
     <title>Shirel & Alan - Notre Mariage</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=21">
+    <link rel="stylesheet" href="css/style.css?v=27">
 </head>
 <body>
     <!-- Welcome Section - Page d'accueil avec choix de langue -->
@@ -41,8 +41,8 @@
 
             <!-- Bloc rose : date + lieu + countdown - FR -->
             <div class="info-card" data-lang-fr>
-                <span class="date-main">16-18 Mars 2026</span>
-                <span class="date-location">Eilat, Israël</span>
+                <span class="date-main">Dimanche 23 Août 2026</span>
+                <span class="date-location">Césarée, Israël</span>
 
                 <div class="countdown-timer">
                     <div class="countdown-item">
@@ -68,8 +68,8 @@
             </div>
             <!-- Bloc rose : date + lieu + countdown - HE -->
             <div class="info-card" data-lang-he style="display:none;">
-                <span class="date-main">16-18 במרץ 2026</span>
-                <span class="date-location">אילת, ישראל</span>
+                <span class="date-main">יום ראשון, 23 באוגוסט 2026</span>
+                <span class="date-location">קיסריה, ישראל</span>
 
                 <div class="countdown-timer">
                     <div class="countdown-item">
@@ -96,12 +96,6 @@
 
             <!-- Boutons de choix - FR -->
             <div class="hero-buttons" data-lang-fr>
-                <button class="btn-event btn-henne" data-target="henne">
-                    <span>Henné</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                </button>
                 <button class="btn-event btn-houppa" data-target="houppa">
                     <span>Houppa & Soirée</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -114,12 +108,6 @@
             </div>
             <!-- Boutons de choix - HE -->
             <div class="hero-buttons" data-lang-he style="display:none;">
-                <button class="btn-event btn-henne" data-target="henne">
-                    <span>חינה</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                </button>
                 <button class="btn-event btn-houppa" data-target="houppa">
                     <span>חופה ומסיבה</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -131,133 +119,6 @@
                 </button>
             </div>
         </div>
-    </section>
-
-    <!-- Loader Henné -->
-    <section id="loader-henne" class="loader-section loader-henne">
-        <div class="loader-content">
-            <img src="images/loader-camel.png" alt="" class="loader-icon">
-            <div class="loader-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <img src="images/loader-sa.png" alt="S & A" class="loader-monogram">
-        </div>
-    </section>
-
-    <!-- Section Henné -->
-    <section id="henne" class="henne-section section-page hidden">
-        <!-- Bouton retour -->
-        <button class="btn-back" onclick="goBack()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            <span data-lang-fr>Retour</span>
-            <span data-lang-he style="display:none;">חזרה</span>
-        </button>
-
-        <div class="henne-background"></div>
-
-        <!-- Arc oriental en haut (nouveau design) -->
-        <div class="henne-arch">
-            <img src="images/arch-header.png" alt="">
-        </div>
-
-        <!-- Bordures dentelle sur les côtés -->
-        <img src="images/lace-border.png" alt="" class="henne-lace-border henne-lace-left">
-        <img src="images/lace-border.png" alt="" class="henne-lace-border henne-lace-right">
-
-        <div class="henne-card">
-            <!-- Titre avec mandala -->
-            <div class="henne-title">
-                <img src="images/henne-title.png" alt="Henné">
-            </div>
-
-            <!-- Mères des mariés - FR -->
-            <div class="henne-mothers" data-lang-fr>
-                <span class="mother-name">Mme Zarka Edna</span>
-                <span class="mother-separator">&</span>
-                <span class="mother-name">Mme Bouhnik Anna</span>
-            </div>
-            <!-- Mères des mariés - HE -->
-            <div class="henne-mothers" data-lang-he style="display:none;">
-                <span class="mother-name">זרקה עדנה</span>
-                <span class="mother-separator">&</span>
-                <span class="mother-name">בוחניק אנה</span>
-            </div>
-
-            <!-- Texte d'invitation - FR -->
-            <p class="henne-intro" data-lang-fr>
-                Seront ravies de vous accueillir au Henné<br>
-                traditionnel de leurs enfants
-            </p>
-            <!-- Texte d'invitation - HE -->
-            <p class="henne-intro" data-lang-he style="display:none;">
-                ישמחו לארח אתכם בטקס החינה המסורתי של<br>
-                ילדיהם
-            </p>
-
-            <!-- Noms du couple avec bordures -->
-            <div class="henne-couple-wrapper">
-                <img src="images/border-ornament.png" alt="" class="couple-border">
-                <h2 class="henne-couple">SHIREL & ALAN</h2>
-                <img src="images/border-ornament.png" alt="" class="couple-border">
-            </div>
-
-            <!-- Date et heure - FR -->
-            <div class="henne-datetime" data-lang-fr>
-                <span class="henne-date">Lundi 16 Mars 2026</span>
-                <span class="henne-time">À 12h30 précises</span>
-            </div>
-            <!-- Date et heure - HE -->
-            <div class="henne-datetime" data-lang-he style="display:none;">
-                <span class="henne-date">יום שני, 16 במרץ 2026</span>
-                <span class="henne-time">בשעה 12:30 בדיוק</span>
-            </div>
-
-            <!-- Lieu - FR -->
-            <div class="henne-location" data-lang-fr>
-                <span class="henne-venue">A LA LUNA BEACH</span>
-                <span class="henne-venue-sub">(Anciennement Village Beach)</span>
-            </div>
-            <!-- Lieu - HE -->
-            <div class="henne-location" data-lang-he style="display:none;">
-                <span class="henne-venue">בחוף "לה לונה"</span>
-                <span class="henne-venue-sub">(לשעבר וילאג' ביץ')</span>
-            </div>
-
-            <!-- Bouton Waze -->
-            <a href="https://waze.com/ul?ll=29.5577,34.9519&navigate=yes" target="_blank" class="henne-waze-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                WAZE
-            </a>
-            <div class="henne-footer">
-                <img src="images/camels-monogram.png" alt="AS">
-            </div>
-
-            <!-- Bouton navigation vers Houppa - FR -->
-            <div class="henne-nav-buttons" data-lang-fr>
-                <button class="section-next-btn btn-to-houppa" data-target="houppa">
-                    <span>Voir Houppa & Soirée</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                </button>
-            </div>
-            <!-- Bouton navigation vers Houppa - HE -->
-            <div class="henne-nav-buttons" data-lang-he style="display:none;">
-                <button class="section-next-btn btn-to-houppa" data-target="houppa">
-                    <span>לחופה ולמסיבה</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
     </section>
 
     <!-- Loader Houppa -->
@@ -289,19 +150,14 @@
             <!-- בס"ד en haut à droite -->
             <span class="houppa-bsd">בס"ד</span>
 
-            <!-- Monogramme SA floral -->
+            <!-- Citation hébraïque + monogramme SA (combiné) -->
             <div class="houppa-monogram">
-                <img src="images/loader-houppa-sa.png" alt="S & A">
+                <img src="images/quote-monogram.png" alt="קול ששון וקול שמחה, קול חתן וקול כלה — S & A">
             </div>
 
             <!-- Titre -->
             <div class="houppa-title">
                 <img src="images/houppa-title.png" alt="Houppa & Soirée">
-            </div>
-
-            <!-- Texte hébreu -->
-            <div class="houppa-hebrew-quote">
-                <img src="images/hebrew-quote-img.png" alt="קול ששון וקול שמחה, קול חתן וקול כלה">
             </div>
 
             <!-- Parents - FR -->
@@ -311,7 +167,8 @@
                     <span class="parent-name">Mme Zarka Edna</span>
                 </div>
                 <div class="parent-group">
-                    <span class="parent-name">Mr & Mme Eliahou & Anna Bouhnik</span>
+                    <span class="parent-name">Mr & Mme Eliahou &</span>
+                    <span class="parent-name">Anna Bouhnik</span>
                 </div>
             </div>
             <!-- Parents - HE -->
@@ -333,20 +190,14 @@
                 מתרגשים לבשר לכם על נישואי ילדיהם
             </p>
 
-            <!-- Noms du couple -->
-            <div class="houppa-couple">
-                <span class="houppa-name">Shirel</span>
-                <span class="houppa-amp">&</span>
-                <span class="houppa-name">Alan</span>
-            </div>
-            <div class="houppa-hebrew-names">
-                <span>יולנדה לאה</span>
-                <span>אהרון הנרי</span>
+            <!-- Noms du couple (image transparente — police Canva exacte) -->
+            <div class="houppa-couple-img">
+                <img src="images/couple-names.png" alt="Shirel & Alan — יולנדה לאה / אהרון הנרי">
             </div>
 
             <!-- Texte cérémonie - FR -->
             <p class="houppa-ceremony-text" data-lang-fr>
-                et seront honorés de votre présence à la cérémonie<br>
+                et seraient honorés de votre présence à la cérémonie<br>
                 religieuse qui sera célébrée
             </p>
             <!-- Texte cérémonie - HE -->
@@ -356,30 +207,30 @@
 
             <!-- Date - FR -->
             <div class="houppa-date" data-lang-fr>
-                <span class="houppa-date-main">Mercredi 18 Mars 2026</span>
-                <span class="houppa-date-hebrew">א' ניסן 5786</span>
-                <span class="houppa-time">À 16h45 précises</span>
+                <span class="houppa-date-main">Dimanche, 23 Août 2026</span>
+                <span class="houppa-date-hebrew">י' אלול 5786</span>
+                <span class="houppa-time">À 18h00 précises</span>
             </div>
             <!-- Date - HE -->
             <div class="houppa-date" data-lang-he style="display:none;">
-                <span class="houppa-date-main">ביום רביעי, 18 במרץ 2026</span>
-                <span class="houppa-date-hebrew">א' ניסן 5786</span>
-                <span class="houppa-time">בשעה 16:45 בדיוק</span>
+                <span class="houppa-date-main">יום ראשון, 23 באוגוסט 2026</span>
+                <span class="houppa-date-hebrew">י' אלול 5786</span>
+                <span class="houppa-time">בשעה 18:00 בדיוק</span>
             </div>
 
             <!-- Lieu - FR -->
             <div class="houppa-venue" data-lang-fr>
-                <span class="venue-name">AU PAVILION, HERODS HOTEL</span>
-                <span class="venue-address">Ha-yam Street 6, Eilat</span>
+                <span class="venue-name">DANS LES JARDINS DE "KOKHAV HAYAM"</span>
+                <span class="venue-address">Kibboutz Sdot Yam, Césarée, Israël</span>
             </div>
             <!-- Lieu - HE -->
             <div class="houppa-venue" data-lang-he style="display:none;">
-                <span class="venue-name">באולם פביליון, מלון הרודס</span>
-                <span class="venue-address">רחוב הים 6, אילת</span>
+                <span class="venue-name">בגני "כוכב הים"</span>
+                <span class="venue-address">קיבוץ שדות ים, קיסריה, ישראל</span>
             </div>
 
             <!-- Bouton Waze -->
-            <a href="https://waze.com/ul?ll=29.5517,34.9537&navigate=yes" target="_blank" class="houppa-waze-btn">
+            <a href="https://waze.com/ul?q=%D7%9B%D7%95%D7%9B%D7%91%20%D7%94%D7%99%D7%9D%20%D7%A9%D7%93%D7%95%D7%AA%20%D7%99%D7%9D&navigate=yes" target="_blank" class="houppa-waze-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
@@ -388,7 +239,7 @@
 
             <!-- Image venue (aquarelle Houppa) -->
             <div class="houppa-venue-image">
-                <img src="images/houppa-venue.png" alt="Cérémonie Houppa">
+                <img src="images/venue-kokhav.png" alt="Jardins de Kokhav Hayam — Sdot Yam, Césarée">
             </div>
 
             <!-- Texte cocktail - FR -->
@@ -405,7 +256,7 @@
             <div class="houppa-dedication" data-lang-fr>
                 <p>Une douce et tendre pensée pour nos Mamies & Papis</p>
                 <p class="dedication-names">Aaron & Berthe Abitbol ז"ל</p>
-                <p class="dedication-names">Felix Kahmus & Hélène Messada Bouhnik ז"ל</p>
+                <p class="dedication-names">Felix Kahmus & Messada Bouhnik ז"ל</p>
                 <p class="dedication-names">Lilo & Madeleine Zarka ז"ל</p>
                 <p class="dedication-closing">Que leur souvenir soit une source de bénédiction.</p>
                 <img src="images/dove.png" alt="" class="dedication-dove">
@@ -437,70 +288,6 @@
         </div>
     </section>
 
-    <!-- Section Votre Séjour -->
-    <section id="sejour" class="sejour-section section-page hidden">
-        <!-- Bouton retour -->
-        <button class="btn-back" onclick="goBack()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            <span data-lang-fr>Retour</span>
-            <span data-lang-he style="display:none;">חזרה</span>
-        </button>
-
-        <div class="sejour-content">
-            <!-- Header avec chameau et avion -->
-            <div class="sejour-header">
-                <img src="images/sejour-header.png" alt="Votre Séjour - Eilat">
-            </div>
-
-            <!-- Intro -->
-            <h2 class="sejour-title">CHÈRE FAMILLE, CHERS AMIS.</h2>
-            <p class="sejour-intro">
-                Nous avons hâte de vivre des moments inoubliables à vos côtés. En attendant, voici quelques recommandations afin de faciliter votre organisation.
-            </p>
-            <p class="sejour-signature">Shirel & Alan</p>
-
-            <!-- Image hôtel -->
-            <div class="sejour-hotel-image">
-                <img src="images/sejour-hotel.png" alt="Vue Eilat">
-            </div>
-
-            <!-- Liste des hôtels -->
-            <div class="sejour-hotels">
-                <h3 class="sejour-subtitle">LES HÔTELS QU'ON PEUT VOUS CONSEILLER :</h3>
-                <ul class="hotel-list">
-                    <li>Isrotel Royal Beach</li>
-                    <li>Herods Palace</li>
-                    <li>Astral Village / Astral Palma</li>
-                    <li>King Salomon</li>
-                    <li>Isrotel Riviera Club</li>
-                    <li>Queen of Sheba</li>
-                    <li>Isrotel Royal Garden</li>
-                    <li>Isrotel Sport Club</li>
-                </ul>
-                <p class="sejour-contact">
-                    Vous pouvez contacter <strong>Jennifer</strong> pour profiter de bons plans hôtels
-                    <a href="tel:054-877-7626" class="contact-phone"> 054-877-7626</a> ou <a href="tel:00972545614351" class="contact-phone">00972.54.561.43.51</a> <strong>Sandra</strong>
-                </p>
-            </div>
-
-            <!-- AirBnB -->
-            <div class="sejour-airbnb">
-                <h3 class="sejour-subtitle">AIR BNB</h3>
-                <p class="sejour-airbnb-text">
-                    pour toutes sortes de logements, appartement ou villa contactez Laurent Fitoussi <a href="tel:052-223-5779" class="contact-phone">052-223-5779</a> depuis Israel et <a href="https://wa.me/972522235779" target="_blank" class="contact-phone">whatsapp 0177501278</a> depuis la France.
-                </p>
-            </div>
-
-            <!-- Monogramme -->
-            <div class="sejour-footer">
-                <img src="images/loader-sa.png" alt="S & A" class="sejour-monogram">
-            </div>
-
-        </div>
-    </section>
-
     <!-- Section RSVP -->
     <section id="rsvp" class="rsvp-section section-page hidden">
         <!-- Bouton retour -->
@@ -517,10 +304,10 @@
         <div class="rsvp-content">
             <!-- Titre - FR -->
             <h2 class="rsvp-title" data-lang-fr>Confirmez votre présence</h2>
-            <p class="rsvp-subtitle" data-lang-fr>Merci de répondre avant début Février 2026</p>
+            <p class="rsvp-subtitle" data-lang-fr>Merci de répondre avant le 1er Août 2026</p>
             <!-- Titre - HE -->
             <h2 class="rsvp-title" data-lang-he style="display:none;">אישור הגעה</h2>
-            <p class="rsvp-subtitle" data-lang-he style="display:none;">אנא השיבו עד תחילת פברואר 2026</p>
+            <p class="rsvp-subtitle" data-lang-he style="display:none;">אנא השיבו עד 1 באוגוסט 2026</p>
 
             <form id="rsvp-form" class="rsvp-form">
                 <!-- Nom -->
@@ -530,43 +317,12 @@
                     <input type="text" id="name" name="name" required data-placeholder-fr="Votre nom complet" data-placeholder-he="השם המלא שלך" placeholder="Votre nom complet">
                 </div>
 
-                <!-- Présence Henné -->
-                <div class="form-group event-group" id="henne-event-group">
-                    <label class="event-title" data-lang-fr>Henné</label>
-                    <label class="event-title" data-lang-he style="display:none;">חינה</label>
-                    <p class="guests-date" data-lang-fr>Lundi 16 Mars 2026</p>
-                    <p class="guests-date" data-lang-he style="display:none;">יום שני, 16 במרץ 2026</p>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="presence_henne" value="oui" required>
-                            <span class="radio-custom"></span>
-                            <span class="radio-label" data-lang-fr>Oui</span>
-                            <span class="radio-label" data-lang-he style="display:none;">כן</span>
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="presence_henne" value="non">
-                            <span class="radio-custom"></span>
-                            <span class="radio-label" data-lang-fr>Non</span>
-                            <span class="radio-label" data-lang-he style="display:none;">לא</span>
-                        </label>
-                    </div>
-                    <div class="guests-selector-wrapper" id="guests-henne-group" style="display:none;">
-                        <label data-lang-fr>Nombre de personnes</label>
-                        <label data-lang-he style="display:none;">מספר אורחים</label>
-                        <div class="guests-selector">
-                            <button type="button" class="guests-btn minus" onclick="updateGuests('henne', -1)">−</button>
-                            <input type="number" id="guests-henne" name="guests_henne" value="1" min="1" max="20" readonly>
-                            <button type="button" class="guests-btn plus" onclick="updateGuests('henne', 1)">+</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Présence Houppa -->
                 <div class="form-group event-group">
                     <label class="event-title" data-lang-fr>Houppa & Soirée</label>
                     <label class="event-title" data-lang-he style="display:none;">חופה ומסיבה</label>
-                    <p class="guests-date" data-lang-fr>Mercredi 18 Mars 2026</p>
-                    <p class="guests-date" data-lang-he style="display:none;">יום רביעי, 18 במרץ 2026</p>
+                    <p class="guests-date" data-lang-fr>Dimanche 23 Août 2026</p>
+                    <p class="guests-date" data-lang-he style="display:none;">יום ראשון, 23 באוגוסט 2026</p>
                     <div class="radio-group">
                         <label class="radio-option">
                             <input type="radio" name="presence_houppa" value="oui" required>
@@ -625,14 +381,6 @@
                 <p class="success-message" id="success-message"></p>
             </div>
 
-            <!-- Bouton vers Séjour (FR uniquement) -->
-            <button class="section-next-btn btn-to-sejour-from-rsvp" data-target="sejour" data-lang-fr>
-                <span>Infos séjour</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7"/>
-                </svg>
-            </button>
-
             <!-- Footer crédit -->
             <footer class="rsvp-footer">
                 <a href="https://wa.me/33603729515?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20la%20cr%C3%A9ation%20d%27un%20site%20personnalis%C3%A9%20!" target="_blank" class="footer-credit" data-lang-fr>
@@ -656,6 +404,6 @@
         <source src="audio/background-music.mp3" type="audio/mpeg">
     </audio>
 
-    <script src="js/main.js?v=16"></script>
+    <script src="js/main.js?v=17"></script>
 </body>
 </html>

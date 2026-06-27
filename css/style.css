@@ -23,7 +23,7 @@
 /* Variables */
 :root {
     /* Couleurs du design */
-    --color-title: #8c4f46;
+    --color-title: #9d3204;
     --color-script: #C9A86C;
     --color-card-bg: #d69086;
     --color-card-text: #5C3D3D;
@@ -53,7 +53,7 @@ body {
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
-    background-color: #f5f0eb;
+    background: #f3e9e2 url('../images/paper-texture.png') center top / cover no-repeat fixed;
     overflow-x: hidden;
 }
 
@@ -130,7 +130,7 @@ body.no-scroll {
     font-family: var(--font-script);
     font-size: 1.6rem;
     font-weight: normal;
-    color: #8c4f46;
+    color: #9d3204;
     margin-bottom: 60px;
     opacity: 0;
     animation: fadeIn 1s ease forwards 0.6s;
@@ -206,9 +206,9 @@ body.no-scroll {
     background: #F5EBE0;
 }
 
-/* Loader Houppa - fond beige */
+/* Loader Houppa - fond papier */
 .loader-houppa {
-    background: #F5EBE0;
+    background: #F5EBE0 url('../images/paper-texture.png') center center / cover no-repeat;
 }
 
 .loader-icon-houppa {
@@ -264,7 +264,7 @@ body.no-scroll {
 .loader-dots .dot {
     width: 12px;
     height: 12px;
-    background: #8c4f46;
+    background: #9d3204;
     border-radius: 50%;
     animation: dotPulse 1.4s ease-in-out infinite;
 }
@@ -373,7 +373,7 @@ body.no-scroll {
     font-family: var(--font-script);
     font-size: 1.5rem;
     font-weight: normal;
-    color: #8c4f46;
+    color: #9d3204;
     margin-top: 0;
 
     /* Animation */
@@ -414,7 +414,7 @@ body.no-scroll {
     font-family: var(--font-body);
     font-size: 1.15rem;
     font-weight: normal;
-    color: #8c4f46;
+    color: #9d3204;
 }
 
 /* ===== COUNTDOWN (dans le bloc rose) ===== */
@@ -484,7 +484,7 @@ body.no-scroll {
     justify-content: center;
     gap: 8px;
     padding: 14px 20px;
-    background: #8c4f46;
+    background: #9d3204;
     color: #ffffff;
     font-family: var(--font-body);
     font-size: 0.85rem;
@@ -512,8 +512,8 @@ body.no-scroll {
 
 .btn-rsvp-hero {
     background: transparent;
-    border: 2px solid #8c4f46;
-    color: #8c4f46;
+    border: 2px solid #9d3204;
+    color: #9d3204;
     box-shadow: none;
     font-size: 0.75rem;
     padding: 10px 20px;
@@ -526,7 +526,7 @@ body.no-scroll {
 }
 
 .btn-henne {
-    background: #c25107;
+    background: #9d3204;
 }
 
 .btn-henne:hover {
@@ -577,7 +577,7 @@ body.no-scroll {
     gap: 6px;
     padding: 10px 16px;
     background: rgba(255, 255, 255, 0.95);
-    color: #8c4f46;
+    color: #9d3204;
     font-family: var(--font-body);
     font-size: 0.8rem;
     font-weight: 500;
@@ -589,7 +589,7 @@ body.no-scroll {
 }
 
 .btn-back:hover {
-    background: #8c4f46;
+    background: #9d3204;
     color: #ffffff;
 }
 
@@ -689,7 +689,7 @@ body.no-scroll {
 .mother-name {
     font-family: var(--font-body);
     font-size: 0.95rem;
-    color: #8c4f46;
+    color: #9d3204;
     /* font-style: italic; */
     font-family: var(--font-body);
     border-bottom: 1px solid;
@@ -698,7 +698,7 @@ body.no-scroll {
 .mother-separator {
     font-family: var(--font-script);
     font-size: 1.3rem;
-    color: #8e462e;
+    color: #9d3204;
 }
 
 /* Texte intro */
@@ -728,7 +728,7 @@ body.no-scroll {
 .henne-couple {
     font-family: var(--font-title);
     font-size: 1.8rem;
-    color: #c25107;
+    color: #9d3204;
     letter-spacing: 0.1em;
     margin: 8px 0;
 }
@@ -751,7 +751,7 @@ body.no-scroll {
 .henne-time {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: #8c4f46;
+    color: #9d3204;
     font-style: italic;
 }
 
@@ -766,7 +766,7 @@ body.no-scroll {
 .henne-venue {
     font-family: var(--font-title);
     font-size: 1.1rem;
-    color: #8c4f46;
+    color: #9d3204;
     letter-spacing: 0.05em;
 }
 
@@ -785,8 +785,8 @@ body.no-scroll {
     gap: 6px;
     padding: 10px 25px;
     background: transparent;
-    border: 1px solid #8c4f46;
-    color: #8c4f46;
+    border: 1px solid #9d3204;
+    color: #9d3204;
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 500;
@@ -797,7 +797,7 @@ body.no-scroll {
 }
 
 .henne-waze-btn:hover {
-    background: #8c4f46;
+    background: #9d3204;
     color: #ffffff;
 }
 
@@ -849,7 +849,7 @@ body.no-scroll {
 
 /* ===== SECTION HOUPPA & SOIRÉE ===== */
 .houppa-section {
-    background: #F5EBE0;
+    background: #f3e9e2 url('../images/paper-texture.png') center top / 100% 100% no-repeat;
     padding: 40px 15px 50px;
     justify-content: flex-start;
 }
@@ -880,15 +880,27 @@ body.no-scroll {
     direction: rtl;
 }
 
-/* Monogramme SA floral */
+/* Citation hébraïque + monogramme SA (image combinée) */
 .houppa-monogram {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     text-align: center;
 }
 
 .houppa-monogram img {
     width: 100%;
-    max-width: 120px;
+    max-width: 340px;
+    height: auto;
+}
+
+/* Noms du couple (image transparente — police Canva exacte) */
+.houppa-couple-img {
+    text-align: center;
+    margin: 8px 0 4px;
+}
+
+.houppa-couple-img img {
+    width: 100%;
+    max-width: 320px;
     height: auto;
 }
 
@@ -912,7 +924,7 @@ body.no-scroll {
 
 .houppa-hebrew-quote p {
     font-size: 0.85rem;
-    color: #8c4f46;
+    color: #9d3204;
     direction: rtl;
     font-style: italic;
 }
@@ -946,6 +958,7 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     flex: 1;
+    text-align: left;
 }
 
 .parent-name {
@@ -959,7 +972,7 @@ body.no-scroll {
 .houppa-intro {
     font-family: var(--font-body);
     font-size: 16px;
-    color: #5C3D3D;
+    color: #9d3204;
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -976,14 +989,14 @@ body.no-scroll {
 .houppa-name {
     font-family: var(--font-script);
     font-size: 2.2rem;
-    color: #8c4f46;
+    color: #9d3204;
     font-weight: 700;
 }
 
 .houppa-amp {
     font-family: var(--font-script);
     font-size: 1.5rem;
-    color: #8c4f46;
+    color: #9d3204;
     font-weight: 700;
 }
 
@@ -997,14 +1010,14 @@ body.no-scroll {
 
 .houppa-hebrew-names span {
     font-size: 0.8rem;
-    color: #8c4f46;
+    color: #9d3204;
 }
 
 /* Texte cérémonie */
 .houppa-ceremony-text {
     font-family: var(--font-body);
     font-size: 0.8rem;
-    color: #5C3D3D;
+    color: #9d3204;
     font-style: italic;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -1019,21 +1032,24 @@ body.no-scroll {
 }
 
 .houppa-date-main {
-    font-family: var(--font-title);
-    font-size: 1.1rem;
-    color: #8c4f46;
+    font-family: var(--font-script);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #9d3204;
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
 .houppa-date-hebrew {
     font-size: 1.2rem;
-    color: #8c4f46;
+    color: #9d3204;
     margin: 3px 0;
 }
 
 .houppa-time {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: #c25107;
+    color: #9d3204;
     font-style: italic;
 }
 
@@ -1048,7 +1064,7 @@ body.no-scroll {
 .venue-name {
     font-family: var(--font-title);
     font-size: 0.95rem;
-    color: #8c4f46;
+    color: #9d3204;
     letter-spacing: 0.05em;
 }
 
@@ -1066,8 +1082,8 @@ body.no-scroll {
     gap: 5px;
     padding: 8px 20px;
     background: transparent;
-    border: 1px solid #8c4f46;
-    color: #8c4f46;
+    border: 1px solid #9d3204;
+    color: #9d3204;
     font-family: var(--font-body);
     font-size: 0.8rem;
     text-decoration: none;
@@ -1077,7 +1093,7 @@ body.no-scroll {
 }
 
 .houppa-waze-btn:hover {
-    background: #8c4f46;
+    background: #9d3204;
     color: #ffffff;
 }
 
@@ -1128,7 +1144,7 @@ body.no-scroll {
 .houppa-dedication p {
     font-family: var(--font-body);
     font-size: 0.75rem;
-    color: #8c4f46;
+    color: #9d3204;
     line-height: 1.4;
     margin-bottom: 3px;
 }
@@ -1184,7 +1200,7 @@ body.no-scroll {
 .sejour-title {
     font-family: var(--font-title);
     font-size: 1.2rem;
-    color: #8c4f46;
+    color: #9d3204;
     letter-spacing: 0.05em;
     margin-bottom: 15px;
 }
@@ -1202,7 +1218,7 @@ body.no-scroll {
 .sejour-signature {
     font-family: var(--font-script);
     font-size: 1.3rem;
-    color: #8c4f46;
+    color: #9d3204;
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -1249,7 +1265,7 @@ body.no-scroll {
 
 .hotel-list li::before {
     content: "•";
-    color: #8c4f46;
+    color: #9d3204;
     margin-right: 8px;
 }
 
@@ -1262,7 +1278,7 @@ body.no-scroll {
 }
 
 .contact-phone {
-    color: #8c4f46;
+    color: #9d3204;
     text-decoration: none;
     font-weight: 600;
 }
@@ -1403,7 +1419,7 @@ body.no-scroll {
 .rsvp-title {
     font-family: var(--font-title);
     font-size: 1.8rem;
-    color: #8c4f46;
+    color: #9d3204;
     text-align: center;
     margin-bottom: 8px;
 }
@@ -1458,7 +1474,7 @@ body.no-scroll {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #8c4f46;
+    border-color: #9d3204;
     box-shadow: 0 0 0 3px rgba(140, 79, 70, 0.1);
 }
 
@@ -1485,7 +1501,7 @@ body.no-scroll {
 }
 
 .radio-option:hover {
-    border-color: #8c4f46;
+    border-color: #9d3204;
     background: #faf8f6;
 }
 
@@ -1511,7 +1527,7 @@ body.no-scroll {
 }
 
 .radio-option input:checked + .radio-custom {
-    border-color: #8c4f46;
+    border-color: #9d3204;
 }
 
 .radio-option input:checked + .radio-custom::after {
@@ -1522,7 +1538,7 @@ body.no-scroll {
     transform: translate(-50%, -50%);
     width: 10px;
     height: 10px;
-    background: #8c4f46;
+    background: #9d3204;
     border-radius: 50%;
 }
 
@@ -1550,7 +1566,7 @@ body.no-scroll {
 }
 
 .checkbox-option:hover {
-    border-color: #8c4f46;
+    border-color: #9d3204;
     background: #faf8f6;
 }
 
@@ -1569,8 +1585,8 @@ body.no-scroll {
 }
 
 .checkbox-option input:checked + .checkbox-custom {
-    border-color: #8c4f46;
-    background: #8c4f46;
+    border-color: #9d3204;
+    background: #9d3204;
 }
 
 .checkbox-option input:checked + .checkbox-custom::after {
@@ -1604,7 +1620,7 @@ body.no-scroll {
     font-family: var(--font-title);
     font-size: 1.1rem;
     font-weight: 600;
-    color: #8c4f46;
+    color: #9d3204;
     display: block;
     margin-bottom: 5px;
 }
@@ -1625,7 +1641,7 @@ body.no-scroll {
 .guests-selector-wrapper label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #8c4f46;
+    color: #9d3204;
     display: block;
     margin-bottom: 10px;
 }
@@ -1646,7 +1662,7 @@ body.no-scroll {
 
 .guests-group label {
     font-weight: 600;
-    color: #8c4f46;
+    color: #9d3204;
 }
 
 .guests-date {
@@ -1672,15 +1688,15 @@ body.no-scroll {
     background: #faf8f6;
     border-radius: 50%;
     font-size: 1.2rem;
-    color: #8c4f46;
+    color: #9d3204;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .guests-btn:hover {
-    background: #8c4f46;
+    background: #9d3204;
     color: #fff;
-    border-color: #8c4f46;
+    border-color: #9d3204;
 }
 
 .guests-selector input {
@@ -1704,7 +1720,7 @@ body.no-scroll {
 .rsvp-submit {
     width: 100%;
     padding: 15px 25px;
-    background: #8c4f46;
+    background: #9d3204;
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -1767,7 +1783,7 @@ body.no-scroll {
 .success-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, #8c4f46 0%, #c25107 100%);
+    background: linear-gradient(135deg, #9d3204 0%, #9d3204 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1788,7 +1804,7 @@ body.no-scroll {
 .rsvp-success h3 {
     font-family: var(--font-title);
     font-size: 1.8rem;
-    color: #8c4f46;
+    color: #9d3204;
     margin-bottom: 10px;
 }
 
@@ -1801,7 +1817,7 @@ body.no-scroll {
 
 .success-message {
     font-style: italic;
-    color: #8c4f46 !important;
+    color: #9d3204 !important;
     margin-top: 15px !important;
 }
 
@@ -1841,7 +1857,7 @@ body.no-scroll {
     max-width: 350px;
     width: 100%;
     padding: 15px 30px;
-    background: #8c4f46;
+    background: #9d3204;
     color: #ffffff;
     font-family: var(--font-body);
     font-size: 0.85rem;
@@ -1995,6 +2011,11 @@ body.rtl .houppa-couple {
     gap: 15px;
     margin-bottom: 5px;
     flex-direction: row-reverse;
+}
+
+/* En hébreu, les noms des parents s'alignent à droite (RTL) */
+body.rtl .parent-group {
+    text-align: right;
 }
 
 

@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ===== Configuration =====
     const CONFIG = {
-        // Date du mariage : 16 Mars 2026 à 18h00
-        weddingDate: new Date('2026-03-16T18:00:00').getTime()
+        // Date du mariage : Dimanche 23 Août 2026 à 18h00 (Houppa & Soirée)
+        weddingDate: new Date('2026-08-23T18:00:00').getTime()
     };
 
     // ===== État de l'application =====
